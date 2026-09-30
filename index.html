@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Ocellatus | Agentes de IA para advocacia e clínicas médicas</title>
+  <meta name="description" content="Agentes de IA seguros e auditáveis e transformação digital para escritórios de advocacia e clínicas médicas. LGPD desde o desenho.">
+  <link rel="canonical" href="https://ocellatuslab.github.io/">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Ocellatus">
+  <meta property="og:url" content="https://ocellatuslab.github.io/">
+  <meta property="og:title" content="Ocellatus | Agentes de IA para advocacia e clínicas médicas">
+  <meta property="og:description" content="Agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas. Diagnóstico antes da solução, LGPD desde o desenho.">
+  <meta property="og:image" content="https://ocellatuslab.github.io/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo da Ocellatus e o texto: Agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ocellatus | Agentes de IA para advocacia e clínicas médicas">
+  <meta name="twitter:description" content="Agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas. Diagnóstico antes da solução, LGPD desde o desenho.">
+  <meta name="twitter:image" content="https://ocellatuslab.github.io/assets/img/og.jpg">
+  <meta name="twitter:image:alt" content="Logo da Ocellatus e o texto: Agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.">
+
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/img/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="Resumo da Ocellatus para modelos de linguagem">
+
+  <link rel="preload" href="/assets/fonts/prompt-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/prompt-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/site.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://ocellatuslab.github.io/#organizacao",
+        "name": "Ocellatus",
+        "alternateName": "Ocellatus — Tecnologia & Desenvolvimento",
+        "slogan": "Tecnologia & Desenvolvimento",
+        "description": "A Ocellatus é uma empresa de software especializada em agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.",
+        "url": "https://ocellatuslab.github.io/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ocellatuslab.github.io/assets/img/icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://ocellatuslab.github.io/assets/img/og.jpg",
+        "email": "PREENCHER_EMAIL",
+        "telephone": "PREENCHER_WHATSAPP_FORMATADO",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "PREENCHER_CIDADE",
+          "addressRegion": "PREENCHER_UF",
+          "addressCountry": "BR"
+        },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "serviceType": [
+          "Diagnóstico de processos e análise de causa-raiz",
+          "Agentes de IA sob medida",
+          "Melhoria e automação de processos",
+          "Integração de sistemas legados com IA",
+          "Outcome as a Service",
+          "Transformação digital"
+        ],
+        "knowsAbout": [
+          "Agentes de IA para escritórios de advocacia",
+          "Automação para clínicas médicas",
+          "IA na saúde com LGPD",
+          "Lei Geral de Proteção de Dados (LGPD)",
+          "Auditoria de sistemas de IA",
+          "Integração de sistemas legados",
+          "Outcome as a Service",
+          "Transformação digital",
+          "Desenvolvimento de software"
+        ],
+        "founder": { "@id": "https://ocellatuslab.github.io/#fundador" },
+        "sameAs": [
+          "https://github.com/OcellatusLab",
+          "PREENCHER_LINKEDIN_URL",
+          "PREENCHER_INSTAGRAM_URL"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "atendimento comercial",
+          "email": "PREENCHER_EMAIL",
+          "telephone": "PREENCHER_WHATSAPP_FORMATADO",
+          "availableLanguage": "pt-BR"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://ocellatuslab.github.io/#fundador",
+        "name": "PREENCHER_NOME_FUNDADOR",
+        "jobTitle": "Fundador e desenvolvedor de software",
+        "worksFor": { "@id": "https://ocellatuslab.github.io/#organizacao" },
+        "sameAs": ["PREENCHER_LINKEDIN_URL"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ocellatuslab.github.io/#site",
+        "url": "https://ocellatuslab.github.io/",
+        "name": "Ocellatus",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://ocellatuslab.github.io/#organizacao" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://ocellatuslab.github.io/#servico-diagnostico",
+        "name": "Diagnóstico de processos e análise de causa-raiz",
+        "description": "Mapeamento de como o escritório ou a clínica funciona hoje para encontrar a causa real do gargalo antes de propor qualquer tecnologia.",
+        "provider": { "@id": "https://ocellatuslab.github.io/#organizacao" },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "audience": { "@type": "BusinessAudience", "audienceType": "Escritórios de advocacia e clínicas médicas" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://ocellatuslab.github.io/#servico-agentes",
+        "name": "Agentes de IA sob medida",
+        "description": "Agentes de IA que executam tarefas reais do dia a dia com limites definidos, registro de cada ação e supervisão humana.",
+        "provider": { "@id": "https://ocellatuslab.github.io/#organizacao" },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "audience": { "@type": "BusinessAudience", "audienceType": "Escritórios de advocacia e clínicas médicas" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://ocellatuslab.github.io/#servico-automacao",
+        "name": "Melhoria e automação de processos",
+        "description": "Otimização do fluxo de trabalho com ou sem IA, eliminando retrabalho e digitação duplicada.",
+        "provider": { "@id": "https://ocellatuslab.github.io/#organizacao" },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "audience": { "@type": "BusinessAudience", "audienceType": "Escritórios de advocacia e clínicas médicas" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://ocellatuslab.github.io/#servico-integracao",
+        "name": "Integração de sistemas legados com IA",
+        "description": "Conexão do sistema jurídico, do prontuário eletrônico ou do ERP que a empresa já usa a recursos de IA, sem trocar tudo.",
+        "provider": { "@id": "https://ocellatuslab.github.io/#organizacao" },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "audience": { "@type": "BusinessAudience", "audienceType": "Escritórios de advocacia e clínicas médicas" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://ocellatuslab.github.io/#servico-outcome",
+        "name": "Outcome as a Service",
+        "alternateName": "Resultado como serviço",
+        "description": "Modelo de contratação em que o cliente paga pelo resultado entregue, definido e medido em conjunto, e não por horas trabalhadas ou licenças de software.",
+        "provider": { "@id": "https://ocellatuslab.github.io/#organizacao" },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "audience": { "@type": "BusinessAudience", "audienceType": "Escritórios de advocacia e clínicas médicas" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://ocellatuslab.github.io/#servico-transformacao",
+        "name": "Transformação digital",
+        "description": "Planejamento e execução, em etapas, de diagnóstico, automação, IA e integração de sistemas para escritórios de advocacia e clínicas médicas.",
+        "provider": { "@id": "https://ocellatuslab.github.io/#organizacao" },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "audience": { "@type": "BusinessAudience", "audienceType": "Escritórios de advocacia e clínicas médicas" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ocellatuslab.github.io/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "A IA vai ter acesso aos dados dos meus clientes ou pacientes?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Só aos dados estritamente necessários para cada tarefa, e cada acesso fica registrado. Antes do projeto definimos juntos quais dados entram, onde ficam armazenados e quem pode acessá-los. Dados de saúde, que são dados sensíveis pela LGPD, recebem cuidados reforçados." }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso trocar meu sistema atual?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Normalmente, não. A integração conecta a IA ao sistema jurídico, ao prontuário eletrônico ou ao ERP que você já usa. A troca só é recomendada quando o diagnóstico mostra que o próprio sistema é a causa do problema." }
+          },
+          {
+            "@type": "Question",
+            "name": "O que é Outcome as a Service?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Outcome as a Service (resultado como serviço) é um modelo em que você paga pelo resultado entregue, e não por horas trabalhadas ou licenças de software. O resultado é definido e medido junto com você antes do início do projeto." }
+          },
+          {
+            "@type": "Question",
+            "name": "Como sei que não estou sendo enganado por mais uma promessa de IA?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Peça três coisas a qualquer fornecedor: um diagnóstico do seu processo antes da proposta, um resultado mensurável por escrito e acesso aos registros do que a IA faz. A Ocellatus trabalha assim e diz quando a IA não é a resposta." }
+          },
+          {
+            "@type": "Question",
+            "name": "Quanto tempo leva um diagnóstico?",
+            "acceptedAnswer": { "@type": "Answer", "text": "PREENCHER_PRAZO_DIAGNOSTICO O prazo exato depende do tamanho da operação e é combinado antes do início." }
+          },
+          {
+            "@type": "Question",
+            "name": "A IA toma decisões sozinha?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Não nas decisões que afetam clientes ou pacientes. Os agentes executam tarefas dentro de limites definidos, e tudo o que exige julgamento profissional passa pela aprovação de uma pessoa." }
+          },
+          {
+            "@type": "Question",
+            "name": "O que acontece se uma automação parar de funcionar?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Você fica sabendo. As soluções têm monitoramento e registros, e o acompanhamento faz parte do trabalho, então falhas são detectadas e corrigidas em vez de passarem despercebidas." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo__interno">
+      <a class="topo__logo" href="#inicio" aria-label="Ocellatus, voltar ao início">
+        <picture>
+          <source srcset="/assets/img/logo-horizontal-white.avif" type="image/avif" media="(prefers-color-scheme: dark)">
+          <source srcset="/assets/img/logo-horizontal-white.webp" type="image/webp" media="(prefers-color-scheme: dark)">
+          <source srcset="/assets/img/logo-horizontal-black.avif" type="image/avif">
+          <img src="/assets/img/logo-horizontal-black.webp" width="170" height="71" alt="Ocellatus Tecnologia &amp; Desenvolvimento">
+        </picture>
+      </a>
+      <nav class="topo__nav" aria-label="Seções do site">
+        <ul>
+          <li><a href="#para-quem">Para quem</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#como-trabalho">Como trabalho</a></li>
+          <li><a href="#seguranca">Segurança</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+      </nav>
+      <a class="botao botao--primario botao--pequeno" href="#contato">Falar comigo</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- 1. Hero -->
+    <section class="hero" id="inicio" aria-labelledby="titulo-hero">
+      <div class="hero__fundo" aria-hidden="true">
+        <picture>
+          <source srcset="/assets/img/peixe-branco.avif" type="image/avif" media="(prefers-color-scheme: dark)">
+          <source srcset="/assets/img/peixe-branco.webp" type="image/webp" media="(prefers-color-scheme: dark)">
+          <source srcset="/assets/img/peixe-pessego.avif" type="image/avif">
+          <img src="/assets/img/peixe-pessego.webp" width="720" height="705" alt="" fetchpriority="high">
+        </picture>
+        <svg class="hero__curva" viewBox="0 0 600 600" focusable="false"><circle cx="300" cy="300" r="290" /></svg>
+      </div>
+      <div class="container hero__conteudo">
+        <p class="rotulo">Tecnologia &amp; Desenvolvimento para advocacia e saúde</p>
+        <h1 id="titulo-hero">Agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.</h1>
+        <p class="hero__sub">Sou desenvolvedor de software de verdade. Primeiro entendo o seu processo, depois construo a solução, com IA quando ela é a resposta e sempre com segurança, LGPD e registro de tudo o que o sistema faz.</p>
+        <div class="acoes">
+          <a class="botao botao--primario" href="https://wa.me/PREENCHER_WHATSAPP?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Ocellatus%20e%20gostaria%20de%20conversar%20sobre%20meu%20escrit%C3%B3rio%2Fminha%20cl%C3%ADnica." rel="noopener noreferrer">Conversar pelo WhatsApp</a>
+          <a class="botao botao--secundario" href="mailto:PREENCHER_EMAIL?subject=Contato%20pelo%20site%20da%20Ocellatus">Enviar um e-mail</a>
+        </div>
+        <ul class="hero__pilares" aria-label="Princípios de trabalho">
+          <li>Segurança e LGPD</li>
+          <li>Auditoria de cada ação</li>
+          <li>Escalável</li>
+          <li>Diagnóstico antes da solução</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2. O problema -->
+    <section class="secao secao--alt" id="problema" aria-labelledby="titulo-problema">
+      <div class="container">
+        <p class="rotulo">O problema</p>
+        <h2 id="titulo-problema">Muita promessa de IA. Pouca engenharia por trás.</h2>
+        <p class="intro">Escritórios e clínicas passaram a receber ofertas de “IA que resolve tudo”: prompts vendidos como produto, automações montadas às pressas, ferramentas que ninguém sabe explicar. Na prática, o que costuma aparecer depois é isto:</p>
+        <ul class="grade grade--3 lista-problemas">
+          <li class="cartao revelar">
+            <h3>Dados expostos</h3>
+            <p>Informações de clientes e pacientes coladas em ferramentas públicas, sem contrato, sem controle de acesso e sem saber onde ficam armazenadas.</p>
+          </li>
+          <li class="cartao revelar">
+            <h3>Automações que quebram</h3>
+            <p>Fluxos frágeis que param quando um sistema muda de versão. Ninguém percebe até um prazo ou uma consulta se perder.</p>
+          </li>
+          <li class="cartao revelar">
+            <h3>Dependência e caixa-preta</h3>
+            <p>Soluções presas a uma ferramenta ou a uma pessoa, sem documentação e sem registro do que a IA decidiu e por quê.</p>
+          </li>
+        </ul>
+        <p class="destaque revelar">A Ocellatus existe para ser o contraponto técnico e honesto: software construído com método, que você consegue auditar e que continua funcionando quando o escritório ou a clínica cresce.</p>
+      </div>
+    </section>
+
+    <!-- 3. Para quem -->
+    <section class="secao" id="para-quem" aria-labelledby="titulo-para-quem">
+      <div class="container">
+        <p class="rotulo">Para quem</p>
+        <h2 id="titulo-para-quem">Conheço a rotina de quem cuida de clientes e pacientes.</h2>
+        <p class="intro">Atendo dois setores que lidam com prazos, volume e informação sigilosa todos os dias. Para cada um, estas são dores comuns e o que dá para fazer com elas.</p>
+        <div class="grade grade--2">
+          <article class="setor revelar" aria-labelledby="titulo-advocacia">
+            <h3 id="titulo-advocacia">Escritórios de advocacia</h3>
+            <dl class="dores">
+              <div>
+                <dt>Prazos e controle de processos</dt>
+                <dd><p class="dor">Prazos acompanhados em planilhas e e-mails, com risco real de perda.</p>
+                <p><strong>Como resolvo:</strong> leitura das publicações e intimações, alerta para cada prazo com um responsável definido e conferência humana antes de qualquer ação.</p></dd>
+              </div>
+              <div>
+                <dt>Petições e documentos repetitivos</dt>
+                <dd><p class="dor">Horas gastas montando peças e contratos a partir dos mesmos modelos.</p>
+                <p><strong>Como resolvo:</strong> agentes que preparam a minuta a partir dos dados do caso para revisão do advogado. Nada é protocolado sem aprovação.</p></dd>
+              </div>
+              <div>
+                <dt>Triagem e atendimento inicial</dt>
+                <dd><p class="dor">Contatos novos chegando pelo WhatsApp sem triagem, misturados aos clientes da casa.</p>
+                <p><strong>Como resolvo:</strong> triagem inicial que organiza o caso, coleta os documentos e encaminha ao advogado certo, respeitando o sigilo profissional.</p></dd>
+              </div>
+            </dl>
+          </article>
+          <article class="setor revelar" aria-labelledby="titulo-saude">
+            <h3 id="titulo-saude">Clínicas e consultórios médicos</h3>
+            <dl class="dores">
+              <div>
+                <dt>Agendamento e confirmações</dt>
+                <dd><p class="dor">Faltas e horários vagos, com a recepção presa ao telefone confirmando consultas.</p>
+                <p><strong>Como resolvo:</strong> confirmações e remarcações automáticas integradas à agenda da clínica, com a recepção acompanhando tudo.</p></dd>
+              </div>
+              <div>
+                <dt>Prontuário e documentação</dt>
+                <dd><p class="dor">Tempo de consulta consumido por digitação e documentos repetitivos.</p>
+                <p><strong>Como resolvo:</strong> apoio na organização de documentos e resumos, sempre revisados pelo profissional antes de entrarem no prontuário.</p></dd>
+              </div>
+              <div>
+                <dt>Faturamento e convênios</dt>
+                <dd><p class="dor">Glosas por guias incompletas e conferência manual demorada.</p>
+                <p><strong>Como resolvo:</strong> conferência das guias antes do envio e controle de pendências, integrados ao sistema que a clínica já usa.</p></dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Serviços -->
+    <section class="secao secao--alt" id="servicos" aria-labelledby="titulo-servicos">
+      <div class="container">
+        <p class="rotulo">Serviços</p>
+        <h2 id="titulo-servicos">O que a Ocellatus faz</h2>
+        <p class="intro">Seis frentes de trabalho, que podem ser contratadas separadamente ou em conjunto.</p>
+        <ul class="grade grade--3 servicos">
+          <li class="cartao servico revelar" id="diagnostico">
+            <h3>Diagnóstico de processos e análise de causa-raiz</h3>
+            <p>Mapeio como o seu escritório ou a sua clínica funciona hoje e encontro onde está o gargalo de verdade, antes de falar em tecnologia.</p>
+            <p class="exemplo"><span>Exemplo:</span> a clínica acha que precisa de um chatbot, mas o diagnóstico mostra que as faltas vêm de confirmações feitas tarde demais.</p>
+          </li>
+          <li class="cartao servico revelar" id="agentes-de-ia">
+            <h3>Agentes de IA sob medida</h3>
+            <p>Agentes que executam tarefas reais do dia a dia, com limites claros do que podem fazer, registro de cada ação e supervisão humana.</p>
+            <p class="exemplo"><span>Exemplo:</span> um agente lê as publicações do dia, identifica os prazos e prepara a lista para o advogado conferir.</p>
+          </li>
+          <li class="cartao servico revelar" id="automacao">
+            <h3>Melhoria e automação de processos</h3>
+            <p>Otimizo o fluxo de trabalho com ou sem IA. Às vezes a melhor solução é uma regra simples ou uma integração bem feita.</p>
+            <p class="exemplo"><span>Exemplo:</span> acabar com a digitação duplicada entre a agenda da clínica e a planilha de faturamento.</p>
+          </li>
+          <li class="cartao servico revelar" id="integracao">
+            <h3>Integração de sistemas legados com IA</h3>
+            <p>Conecto o sistema que você já usa, como o sistema jurídico, o prontuário eletrônico ou o ERP, a recursos de IA, sem precisar trocar tudo.</p>
+            <p class="exemplo"><span>Exemplo:</span> buscar documentos antigos do escritório em linguagem natural, direto no acervo que já existe.</p>
+          </li>
+          <li class="cartao servico revelar" id="outcome">
+            <h3>Outcome as a Service</h3>
+            <p>Você paga pelo resultado entregue, não por horas trabalhadas nem por licenças. O risco de a solução não funcionar deixa de ser só seu.</p>
+            <p class="exemplo"><span>Exemplo:</span> a clínica paga pelas guias de convênio conferidas antes do envio, e não por um software que talvez ninguém use.</p>
+          </li>
+          <li class="cartao servico revelar" id="transformacao-digital">
+            <h3>Transformação digital</h3>
+            <p>O trabalho que une tudo isso: diagnóstico, automação, IA e integração, planejados em etapas que a sua equipe consegue absorver.</p>
+            <p class="exemplo"><span>Exemplo:</span> um escritório sai de pastas e planilhas para um fluxo digital com prazos, documentos e atendimento conectados.</p>
+          </li>
+        </ul>
+
+        <aside class="definicao revelar" id="outcome-as-a-service" aria-labelledby="titulo-oaas">
+          <h3 id="titulo-oaas">O que é Outcome as a Service?</h3>
+          <p><strong>Outcome as a Service (resultado como serviço) é um modelo de contratação em que o cliente paga pelo resultado entregue, e não pelas horas trabalhadas ou pelas licenças de software.</strong> O resultado é definido e medido junto com o cliente antes do início do projeto.</p>
+          <p>Na prática, em vez de comprar uma ferramenta e torcer para que ela seja usada, você combina o que precisa acontecer, como prazos lidos e distribuídos todos os dias ou guias conferidas antes do envio, e paga conforme isso é entregue. Quem fornece a solução passa a ter o mesmo interesse que você: que ela funcione.</p>
+          <p>O modelo já é adotado por empresas de tecnologia nos Estados Unidos e ainda é novo no Brasil.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 5. Como trabalho -->
+    <section class="secao" id="como-trabalho" aria-labelledby="titulo-como">
+      <div class="container">
+        <p class="rotulo">Como trabalho</p>
+        <h2 id="titulo-como">Quatro etapas, sempre nesta ordem.</h2>
+        <ol class="etapas">
+          <li class="etapa revelar">
+            <h3>Diagnóstico</h3>
+            <p>Entendo o processo atual, converso com quem executa e encontro a causa do problema. Se a IA não for a resposta, digo isso.</p>
+          </li>
+          <li class="etapa revelar">
+            <h3>Proposta com resultado mensurável</h3>
+            <p>Você recebe o resultado esperado, como ele será medido, o que fica fora do escopo e onde os dados vão ficar.</p>
+          </li>
+          <li class="etapa revelar">
+            <h3>Implementação segura</h3>
+            <p>Construo em etapas, com controle de acesso, registro de ações e testes antes de a solução chegar à rotina da equipe.</p>
+          </li>
+          <li class="etapa revelar">
+            <h3>Acompanhamento e auditoria</h3>
+            <p>Depois da entrega, acompanho os resultados e os registros. Tudo o que a IA fez pode ser consultado e revisado.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 6. Segurança e conformidade -->
+    <section class="secao secao--escura" id="seguranca" aria-labelledby="titulo-seguranca">
+      <div class="container">
+        <p class="rotulo">Segurança e conformidade</p>
+        <h2 id="titulo-seguranca">Segurança não é um item da lista. É o ponto de partida.</h2>
+        <p class="intro">Advogados e médicos respondem pelo sigilo de quem atendem. Por isso, cada projeto da Ocellatus segue estes princípios desde o desenho.</p>
+        <ul class="grade grade--3 garantias">
+          <li class="revelar">
+            <h3>LGPD desde o desenho</h3>
+            <p>Cada projeto começa definindo quais dados são necessários, para qual finalidade e por quanto tempo. O que não é necessário não é coletado.</p>
+          </li>
+          <li class="revelar">
+            <h3>Dados sensíveis de saúde</h3>
+            <p>Dados de saúde são dados sensíveis pela LGPD (art. 11). Recebem acesso restrito, registro de uso e cuidados compatíveis com o sigilo médico.</p>
+          </li>
+          <li class="revelar">
+            <h3>Logs de auditoria</h3>
+            <p>Cada ação de um agente de IA fica registrada: o que recebeu, o que fez, quando e com qual resultado. Nada de caixa-preta.</p>
+          </li>
+          <li class="revelar">
+            <h3>Controle de acesso</h3>
+            <p>Cada pessoa e cada sistema acessa só o que precisa, com permissões que podem ser revistas a qualquer momento.</p>
+          </li>
+          <li class="revelar">
+            <h3>Onde os dados ficam</h3>
+            <!-- CONFIRMAR: descrever a política real de armazenamento (infraestrutura do cliente, nuvem no Brasil etc.). -->
+            <p>O local de armazenamento é definido com você antes do início do projeto e fica registrado na proposta.</p>
+          </li>
+          <li class="revelar">
+            <h3>Supervisão humana</h3>
+            <p>Decisões que afetam clientes ou pacientes passam por uma pessoa. A IA prepara, o profissional decide.</p>
+          </li>
+        </ul>
+        <!-- Espaço reservado: selos ou certificações só entram aqui se forem reais e verificáveis. -->
+      </div>
+    </section>
+
+    <!-- 7. Sobre -->
+    <section class="secao" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="container sobre">
+        <figure class="sobre__foto">
+          <!-- PREENCHER: trocar pela foto do fundador (WebP/AVIF, 480×480, com alt descritivo). -->
+          <picture>
+            <source srcset="/assets/img/submarca-white.avif" type="image/avif" media="(prefers-color-scheme: dark)">
+            <source srcset="/assets/img/submarca-white.webp" type="image/webp" media="(prefers-color-scheme: dark)">
+            <source srcset="/assets/img/submarca-color.avif" type="image/avif">
+            <img src="/assets/img/submarca-color.webp" width="400" height="422" alt="Símbolo da Ocellatus: a letra O formada pelo peixe Oscar" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <div class="sobre__texto">
+          <p class="rotulo">Sobre</p>
+          <h2 id="titulo-sobre">Um desenvolvedor, não um vendedor de IA.</h2>
+          <p><strong>A Ocellatus é uma empresa de software de PREENCHER_CIDADE/PREENCHER_UF especializada em agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.</strong> Foi fundada por PREENCHER_NOME_FUNDADOR, desenvolvedor de software.</p>
+          <p>Escrevo software de verdade e uso IA como ferramenta, não como truque. Em eventos do setor, vi muitos empresários pagarem por promessas, prompts e automações frágeis. A Ocellatus existe para ser o contraponto técnico e honesto.</p>
+          <p>PREENCHER_BIO</p>
+          <p class="sobre__nome">O nome vem do <i lang="la">Astronotus ocellatus</i>, o peixe Oscar, que junto com a letra O forma o símbolo da marca.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section class="secao secao--alt" id="faq" aria-labelledby="titulo-faq">
+      <div class="container container--estreito">
+        <p class="rotulo">Dúvidas frequentes</p>
+        <h2 id="titulo-faq">Perguntas que advogados e médicos costumam fazer</h2>
+        <div class="faq">
+          <details>
+            <summary><h3>A IA vai ter acesso aos dados dos meus clientes ou pacientes?</h3></summary>
+            <p>Só aos dados estritamente necessários para cada tarefa, e cada acesso fica registrado. Antes do projeto definimos juntos quais dados entram, onde ficam armazenados e quem pode acessá-los. Dados de saúde, que são dados sensíveis pela LGPD, recebem cuidados reforçados.</p>
+          </details>
+          <details>
+            <summary><h3>Preciso trocar meu sistema atual?</h3></summary>
+            <p>Normalmente, não. A integração conecta a IA ao sistema jurídico, ao prontuário eletrônico ou ao ERP que você já usa. A troca só é recomendada quando o diagnóstico mostra que o próprio sistema é a causa do problema.</p>
+          </details>
+          <details>
+            <summary><h3>O que é Outcome as a Service?</h3></summary>
+            <p>Outcome as a Service (resultado como serviço) é um modelo em que você paga pelo resultado entregue, e não por horas trabalhadas ou licenças de software. O resultado é definido e medido junto com você antes do início do projeto. <a href="#outcome-as-a-service">Veja a explicação completa</a>.</p>
+          </details>
+          <details>
+            <summary><h3>Como sei que não estou sendo enganado por mais uma promessa de IA?</h3></summary>
+            <p>Peça três coisas a qualquer fornecedor: um diagnóstico do seu processo antes da proposta, um resultado mensurável por escrito e acesso aos registros do que a IA faz. A Ocellatus trabalha assim e diz quando a IA não é a resposta.</p>
+          </details>
+          <details>
+            <summary><h3>Quanto tempo leva um diagnóstico?</h3></summary>
+            <p>PREENCHER_PRAZO_DIAGNOSTICO O prazo exato depende do tamanho da operação e é combinado antes do início.</p>
+          </details>
+          <details>
+            <summary><h3>A IA toma decisões sozinha?</h3></summary>
+            <p>Não nas decisões que afetam clientes ou pacientes. Os agentes executam tarefas dentro de limites definidos, e tudo o que exige julgamento profissional passa pela aprovação de uma pessoa.</p>
+          </details>
+          <details>
+            <summary><h3>O que acontece se uma automação parar de funcionar?</h3></summary>
+            <p>Você fica sabendo. As soluções têm monitoramento e registros, e o acompanhamento faz parte do trabalho, então falhas são detectadas e corrigidas em vez de passarem despercebidas.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Contato -->
+    <section class="secao contato" id="contato" aria-labelledby="titulo-contato">
+      <div class="container container--estreito">
+        <p class="rotulo">Contato</p>
+        <h2 id="titulo-contato">Vamos conversar sobre o seu escritório ou a sua clínica.</h2>
+        <p class="intro">A primeira conversa serve para entender o seu cenário. Sem compromisso e sem apresentação de vendas.</p>
+        <div class="acoes acoes--centro">
+          <a class="botao botao--primario" href="https://wa.me/PREENCHER_WHATSAPP?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Ocellatus%20e%20gostaria%20de%20conversar%20sobre%20meu%20escrit%C3%B3rio%2Fminha%20cl%C3%ADnica." rel="noopener noreferrer">Conversar pelo WhatsApp</a>
+          <a class="botao botao--secundario" href="mailto:PREENCHER_EMAIL?subject=Contato%20pelo%20site%20da%20Ocellatus">Enviar um e-mail</a>
+        </div>
+        <ul class="contato__lista">
+          <li><span>WhatsApp</span> PREENCHER_WHATSAPP_FORMATADO</li>
+          <li><span>E-mail</span> <a href="mailto:PREENCHER_EMAIL">PREENCHER_EMAIL</a></li>
+          <li><span>LinkedIn</span> <a href="PREENCHER_LINKEDIN_URL" rel="noopener noreferrer">Perfil no LinkedIn</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__interno">
+      <div class="rodape__marca">
+        <picture>
+          <source srcset="/assets/img/logo-horizontal-white.avif" type="image/avif" media="(prefers-color-scheme: dark)">
+          <source srcset="/assets/img/logo-horizontal-white.webp" type="image/webp" media="(prefers-color-scheme: dark)">
+          <source srcset="/assets/img/logo-horizontal-black.avif" type="image/avif">
+          <img src="/assets/img/logo-horizontal-black.webp" width="170" height="71" alt="Ocellatus Tecnologia &amp; Desenvolvimento" loading="lazy" decoding="async">
+        </picture>
+        <p>Software seguro e auditável para advocacia e saúde.</p>
+        <!-- PREENCHER (opcional): <p>CNPJ PREENCHER_CNPJ</p> -->
+      </div>
+      <ul class="rodape__links">
+        <li><a href="/privacidade.html">Política de privacidade</a></li>
+        <li><a href="PREENCHER_LINKEDIN_URL" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/OcellatusLab" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="PREENCHER_INSTAGRAM_URL" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+      <p class="rodape__copy">© 2026 Ocellatus. Este site não usa cookies nem rastreadores.</p>
+    </div>
+  </footer>
+</body>
+</html>

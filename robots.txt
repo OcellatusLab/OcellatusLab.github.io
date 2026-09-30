@@ -1,0 +1,34 @@
+# Ocellatus — todo o conteúdo é público e pode ser lido por buscadores e assistentes de IA.
+
+User-agent: *
+Allow: /
+
+# Crawlers de IA liberados explicitamente
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://ocellatuslab.github.io/sitemap.xml

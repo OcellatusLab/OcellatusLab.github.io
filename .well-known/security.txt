@@ -1,0 +1,6 @@
+# Relatos de vulnerabilidade no site da Ocellatus
+Contact: mailto:PREENCHER_EMAIL
+Expires: 2027-09-30T00:00:00.000Z
+Preferred-Languages: pt, en
+Canonical: https://ocellatuslab.github.io/.well-known/security.txt
+Policy: https://ocellatuslab.github.io/privacidade.html

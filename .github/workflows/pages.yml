@@ -1,0 +1,44 @@
+name: Publicar no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      # Monta só os arquivos públicos (README, tools/ e .github/ ficam de fora).
+      - name: Montar o site
+        run: |
+          mkdir _site
+          cp -r index.html privacidade.html 404.html favicon.ico \
+                robots.txt sitemap.xml llms.txt llms-full.txt site.webmanifest \
+                assets .well-known _site/
+          if [ -f CNAME ]; then cp CNAME _site/; fi
+          touch _site/.nojekyll
+
+      # v3 mantém arquivos ocultos no pacote; a v4 descartaria /.well-known/security.txt.
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

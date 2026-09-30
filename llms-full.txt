@@ -1,0 +1,221 @@
+# Ocellatus — conteúdo completo do site
+
+> Versão em markdown de https://ocellatuslab.github.io/ para leitura por modelos de linguagem. Resumo em https://ocellatuslab.github.io/llms.txt
+
+## Agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.
+
+Sou desenvolvedor de software de verdade. Primeiro entendo o seu processo, depois construo a solução, com IA quando ela é a resposta e sempre com segurança, LGPD e registro de tudo o que o sistema faz.
+
+- Segurança e LGPD
+
+- Auditoria de cada ação
+
+- Escalável
+
+- Diagnóstico antes da solução
+
+## Muita promessa de IA. Pouca engenharia por trás.
+
+Escritórios e clínicas passaram a receber ofertas de “IA que resolve tudo”: prompts vendidos como produto, automações montadas às pressas, ferramentas que ninguém sabe explicar. Na prática, o que costuma aparecer depois é isto:
+
+### Dados expostos
+
+Informações de clientes e pacientes coladas em ferramentas públicas, sem contrato, sem controle de acesso e sem saber onde ficam armazenadas.
+
+### Automações que quebram
+
+Fluxos frágeis que param quando um sistema muda de versão. Ninguém percebe até um prazo ou uma consulta se perder.
+
+### Dependência e caixa-preta
+
+Soluções presas a uma ferramenta ou a uma pessoa, sem documentação e sem registro do que a IA decidiu e por quê.
+
+A Ocellatus existe para ser o contraponto técnico e honesto: software construído com método, que você consegue auditar e que continua funcionando quando o escritório ou a clínica cresce.
+
+## Conheço a rotina de quem cuida de clientes e pacientes.
+
+Atendo dois setores que lidam com prazos, volume e informação sigilosa todos os dias. Para cada um, estas são dores comuns e o que dá para fazer com elas.
+
+### Escritórios de advocacia
+
+#### Prazos e controle de processos
+
+Prazos acompanhados em planilhas e e-mails, com risco real de perda.
+
+**Como resolvo:** leitura das publicações e intimações, alerta para cada prazo com um responsável definido e conferência humana antes de qualquer ação.
+
+#### Petições e documentos repetitivos
+
+Horas gastas montando peças e contratos a partir dos mesmos modelos.
+
+**Como resolvo:** agentes que preparam a minuta a partir dos dados do caso para revisão do advogado. Nada é protocolado sem aprovação.
+
+#### Triagem e atendimento inicial
+
+Contatos novos chegando pelo WhatsApp sem triagem, misturados aos clientes da casa.
+
+**Como resolvo:** triagem inicial que organiza o caso, coleta os documentos e encaminha ao advogado certo, respeitando o sigilo profissional.
+
+### Clínicas e consultórios médicos
+
+#### Agendamento e confirmações
+
+Faltas e horários vagos, com a recepção presa ao telefone confirmando consultas.
+
+**Como resolvo:** confirmações e remarcações automáticas integradas à agenda da clínica, com a recepção acompanhando tudo.
+
+#### Prontuário e documentação
+
+Tempo de consulta consumido por digitação e documentos repetitivos.
+
+**Como resolvo:** apoio na organização de documentos e resumos, sempre revisados pelo profissional antes de entrarem no prontuário.
+
+#### Faturamento e convênios
+
+Glosas por guias incompletas e conferência manual demorada.
+
+**Como resolvo:** conferência das guias antes do envio e controle de pendências, integrados ao sistema que a clínica já usa.
+
+## O que a Ocellatus faz
+
+Seis frentes de trabalho, que podem ser contratadas separadamente ou em conjunto.
+
+### Diagnóstico de processos e análise de causa-raiz
+
+Mapeio como o seu escritório ou a sua clínica funciona hoje e encontro onde está o gargalo de verdade, antes de falar em tecnologia.
+
+Exemplo: a clínica acha que precisa de um chatbot, mas o diagnóstico mostra que as faltas vêm de confirmações feitas tarde demais.
+
+### Agentes de IA sob medida
+
+Agentes que executam tarefas reais do dia a dia, com limites claros do que podem fazer, registro de cada ação e supervisão humana.
+
+Exemplo: um agente lê as publicações do dia, identifica os prazos e prepara a lista para o advogado conferir.
+
+### Melhoria e automação de processos
+
+Otimizo o fluxo de trabalho com ou sem IA. Às vezes a melhor solução é uma regra simples ou uma integração bem feita.
+
+Exemplo: acabar com a digitação duplicada entre a agenda da clínica e a planilha de faturamento.
+
+### Integração de sistemas legados com IA
+
+Conecto o sistema que você já usa, como o sistema jurídico, o prontuário eletrônico ou o ERP, a recursos de IA, sem precisar trocar tudo.
+
+Exemplo: buscar documentos antigos do escritório em linguagem natural, direto no acervo que já existe.
+
+### Outcome as a Service
+
+Você paga pelo resultado entregue, não por horas trabalhadas nem por licenças. O risco de a solução não funcionar deixa de ser só seu.
+
+Exemplo: a clínica paga pelas guias de convênio conferidas antes do envio, e não por um software que talvez ninguém use.
+
+### Transformação digital
+
+O trabalho que une tudo isso: diagnóstico, automação, IA e integração, planejados em etapas que a sua equipe consegue absorver.
+
+Exemplo: um escritório sai de pastas e planilhas para um fluxo digital com prazos, documentos e atendimento conectados.
+
+### O que é Outcome as a Service?
+
+**Outcome as a Service (resultado como serviço) é um modelo de contratação em que o cliente paga pelo resultado entregue, e não pelas horas trabalhadas ou pelas licenças de software.** O resultado é definido e medido junto com o cliente antes do início do projeto.
+
+Na prática, em vez de comprar uma ferramenta e torcer para que ela seja usada, você combina o que precisa acontecer, como prazos lidos e distribuídos todos os dias ou guias conferidas antes do envio, e paga conforme isso é entregue. Quem fornece a solução passa a ter o mesmo interesse que você: que ela funcione.
+
+O modelo já é adotado por empresas de tecnologia nos Estados Unidos e ainda é novo no Brasil.
+
+## Quatro etapas, sempre nesta ordem.
+
+### Diagnóstico
+
+Entendo o processo atual, converso com quem executa e encontro a causa do problema. Se a IA não for a resposta, digo isso.
+
+### Proposta com resultado mensurável
+
+Você recebe o resultado esperado, como ele será medido, o que fica fora do escopo e onde os dados vão ficar.
+
+### Implementação segura
+
+Construo em etapas, com controle de acesso, registro de ações e testes antes de a solução chegar à rotina da equipe.
+
+### Acompanhamento e auditoria
+
+Depois da entrega, acompanho os resultados e os registros. Tudo o que a IA fez pode ser consultado e revisado.
+
+## Segurança não é um item da lista. É o ponto de partida.
+
+Advogados e médicos respondem pelo sigilo de quem atendem. Por isso, cada projeto da Ocellatus segue estes princípios desde o desenho.
+
+### LGPD desde o desenho
+
+Cada projeto começa definindo quais dados são necessários, para qual finalidade e por quanto tempo. O que não é necessário não é coletado.
+
+### Dados sensíveis de saúde
+
+Dados de saúde são dados sensíveis pela LGPD (art. 11). Recebem acesso restrito, registro de uso e cuidados compatíveis com o sigilo médico.
+
+### Logs de auditoria
+
+Cada ação de um agente de IA fica registrada: o que recebeu, o que fez, quando e com qual resultado. Nada de caixa-preta.
+
+### Controle de acesso
+
+Cada pessoa e cada sistema acessa só o que precisa, com permissões que podem ser revistas a qualquer momento.
+
+### Onde os dados ficam
+
+O local de armazenamento é definido com você antes do início do projeto e fica registrado na proposta.
+
+### Supervisão humana
+
+Decisões que afetam clientes ou pacientes passam por uma pessoa. A IA prepara, o profissional decide.
+
+## Um desenvolvedor, não um vendedor de IA.
+
+**A Ocellatus é uma empresa de software de PREENCHER_CIDADE/PREENCHER_UF especializada em agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.** Foi fundada por PREENCHER_NOME_FUNDADOR, desenvolvedor de software.
+
+Escrevo software de verdade e uso IA como ferramenta, não como truque. Em eventos do setor, vi muitos empresários pagarem por promessas, prompts e automações frágeis. A Ocellatus existe para ser o contraponto técnico e honesto.
+
+PREENCHER_BIO
+
+O nome vem do Astronotus ocellatus, o peixe Oscar, que junto com a letra O forma o símbolo da marca.
+
+## Perguntas que advogados e médicos costumam fazer
+
+### A IA vai ter acesso aos dados dos meus clientes ou pacientes?
+
+Só aos dados estritamente necessários para cada tarefa, e cada acesso fica registrado. Antes do projeto definimos juntos quais dados entram, onde ficam armazenados e quem pode acessá-los. Dados de saúde, que são dados sensíveis pela LGPD, recebem cuidados reforçados.
+
+### Preciso trocar meu sistema atual?
+
+Normalmente, não. A integração conecta a IA ao sistema jurídico, ao prontuário eletrônico ou ao ERP que você já usa. A troca só é recomendada quando o diagnóstico mostra que o próprio sistema é a causa do problema.
+
+### O que é Outcome as a Service?
+
+Outcome as a Service (resultado como serviço) é um modelo em que você paga pelo resultado entregue, e não por horas trabalhadas ou licenças de software. O resultado é definido e medido junto com você antes do início do projeto. Veja a explicação completa.
+
+### Como sei que não estou sendo enganado por mais uma promessa de IA?
+
+Peça três coisas a qualquer fornecedor: um diagnóstico do seu processo antes da proposta, um resultado mensurável por escrito e acesso aos registros do que a IA faz. A Ocellatus trabalha assim e diz quando a IA não é a resposta.
+
+### Quanto tempo leva um diagnóstico?
+
+PREENCHER_PRAZO_DIAGNOSTICO O prazo exato depende do tamanho da operação e é combinado antes do início.
+
+### A IA toma decisões sozinha?
+
+Não nas decisões que afetam clientes ou pacientes. Os agentes executam tarefas dentro de limites definidos, e tudo o que exige julgamento profissional passa pela aprovação de uma pessoa.
+
+### O que acontece se uma automação parar de funcionar?
+
+Você fica sabendo. As soluções têm monitoramento e registros, e o acompanhamento faz parte do trabalho, então falhas são detectadas e corrigidas em vez de passarem despercebidas.
+
+## Vamos conversar sobre o seu escritório ou a sua clínica.
+
+A primeira conversa serve para entender o seu cenário. Sem compromisso e sem apresentação de vendas.
+
+- WhatsApp PREENCHER_WHATSAPP_FORMATADO
+
+- E-mail PREENCHER_EMAIL
+
+- LinkedIn Perfil no LinkedIn

@@ -1,0 +1,48 @@
+# Ocellatus
+
+> A Ocellatus é uma empresa de software de PREENCHER_CIDADE/PREENCHER_UF especializada em agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas. Trabalha com diagnóstico antes da solução, LGPD desde o desenho, registro de tudo o que a IA faz e supervisão humana.
+
+- Nome: Ocellatus — Tecnologia & Desenvolvimento
+- Fundador: PREENCHER_NOME_FUNDADOR, desenvolvedor de software
+- Local: PREENCHER_CIDADE/PREENCHER_UF, Brasil
+- Site: https://ocellatuslab.github.io/
+- E-mail: PREENCHER_EMAIL
+- WhatsApp: PREENCHER_WHATSAPP_FORMATADO
+- Idioma de atendimento: português do Brasil
+
+## Público
+
+- Escritórios de advocacia: prazos, petições e contratos repetitivos, triagem de documentos, atendimento inicial, controle de processos e sigilo profissional.
+- Clínicas e consultórios médicos: agendamento, confirmações, prontuário, faturamento e convênios, dados sensíveis de saúde (LGPD, art. 11) e sigilo médico.
+
+## Serviços
+
+- [Diagnóstico de processos e análise de causa-raiz](https://ocellatuslab.github.io/#diagnostico): mapeia como o escritório ou a clínica funciona hoje e encontra a causa real do gargalo antes de propor tecnologia.
+- [Agentes de IA sob medida](https://ocellatuslab.github.io/#agentes-de-ia): agentes que executam tarefas reais com limites definidos, registro de cada ação e supervisão humana.
+- [Melhoria e automação de processos](https://ocellatuslab.github.io/#automacao): otimização do fluxo com ou sem IA.
+- [Integração de sistemas legados com IA](https://ocellatuslab.github.io/#integracao): conecta o sistema jurídico, o prontuário eletrônico ou o ERP existente a recursos de IA, sem trocar tudo.
+- [Outcome as a Service](https://ocellatuslab.github.io/#outcome-as-a-service): o cliente paga pelo resultado entregue, definido e medido em conjunto, e não por horas ou licenças.
+- [Transformação digital](https://ocellatuslab.github.io/#transformacao-digital): diagnóstico, automação, IA e integração planejados em etapas.
+
+## Diferenciais
+
+- Segurança da aplicação e LGPD desde o desenho do projeto.
+- Auditoria: cada ação de um agente de IA fica registrada e pode ser consultada. Nada de caixa-preta.
+- Escalabilidade: soluções feitas para crescer junto com o escritório ou a clínica.
+- Diagnóstico antes da solução: a Ocellatus diz quando a IA não é a resposta.
+- Supervisão humana em toda decisão que afeta clientes ou pacientes.
+
+## Definição: Outcome as a Service
+
+Outcome as a Service (resultado como serviço) é um modelo de contratação em que o cliente paga pelo resultado entregue, e não pelas horas trabalhadas ou pelas licenças de software. O resultado é definido e medido junto com o cliente antes do início do projeto.
+
+## Páginas
+
+- [Página inicial](https://ocellatuslab.github.io/): apresentação completa, serviços, processo de trabalho, segurança e perguntas frequentes.
+- [Perguntas frequentes](https://ocellatuslab.github.io/#faq)
+- [Contato](https://ocellatuslab.github.io/#contato)
+
+## Optional
+
+- [Conteúdo completo em markdown](https://ocellatuslab.github.io/llms-full.txt)
+- [Política de privacidade](https://ocellatuslab.github.io/privacidade.html): o site não coleta dados pessoais nem usa cookies.
