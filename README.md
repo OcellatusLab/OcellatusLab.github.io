@@ -42,8 +42,6 @@ grep -rn "PREENCHER" --exclude-dir=.git --exclude=README.md .
 | `PREENCHER_NOME_FUNDADOR` | Nome completo | Sobre, JSON-LD, llms.txt |
 | `PREENCHER_CIDADE` / `PREENCHER_UF` | Ex.: `Manaus` / `AM` | Sobre, JSON-LD, llms.txt |
 | `PREENCHER_EMAIL` | E-mail de contato | Botões, contato, privacidade, security.txt, JSON-LD, llms.txt |
-| `PREENCHER_WHATSAPP` | Só dígitos com DDI e DDD, ex.: `5592999999999` | Links `wa.me` |
-| `PREENCHER_WHATSAPP_FORMATADO` | Ex.: `+55 92 99999-9999` | Contato, JSON-LD, llms.txt |
 | `PREENCHER_LINKEDIN_URL` / `PREENCHER_INSTAGRAM_URL` | URLs completas | Contato, rodapé, JSON-LD |
 | `PREENCHER_BIO` | Trajetória e por que criou a Ocellatus | Seção Sobre |
 | `PREENCHER_PRAZO_DIAGNOSTICO` | Primeira frase da resposta, ex.: "Em geral, X semanas." | FAQ (HTML e JSON-LD) |
