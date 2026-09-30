@@ -6,7 +6,7 @@
 - Fundador: PREENCHER_NOME_FUNDADOR, desenvolvedor de software
 - Local: PREENCHER_CIDADE/PREENCHER_UF, Brasil
 - Site: https://ocellatuslab.github.io/
-- E-mail: PREENCHER_EMAIL
+- E-mail: contato@ocellatus.com.br
 - WhatsApp: +55 92 99239-4653
 - LinkedIn: https://www.linkedin.com/company/145250750/
 - Instagram: https://www.instagram.com/grupoocellatus/
