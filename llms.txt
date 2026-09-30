@@ -8,6 +8,8 @@
 - Site: https://ocellatuslab.github.io/
 - E-mail: PREENCHER_EMAIL
 - WhatsApp: +55 92 99239-4653
+- LinkedIn: https://www.linkedin.com/company/145250750/
+- GitHub: https://github.com/OcellatusLab
 - Idioma de atendimento: português do Brasil
 
 ## Público
