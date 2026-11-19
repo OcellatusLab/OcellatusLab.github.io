@@ -78,7 +78,7 @@ Glosas por guias incompletas e conferência manual demorada.
 
 ## O que a Ocellatus faz
 
-Seis frentes de trabalho, que podem ser contratadas separadamente ou em conjunto.
+Nove frentes de trabalho, que podem ser contratadas separadamente ou em conjunto.
 
 ### Diagnóstico de processos e análise de causa-raiz
 
@@ -115,6 +115,24 @@ Exemplo: a clínica paga pelas guias de convênio conferidas antes do envio, e n
 O trabalho que une tudo isso: diagnóstico, automação, IA e integração, planejados em etapas que a sua equipe consegue absorver.
 
 Exemplo: um escritório sai de pastas e planilhas para um fluxo digital com prazos, documentos e atendimento conectados.
+
+### Treinamento de IA
+
+Capacito advogados, médicos e equipes administrativas a usar IA no dia a dia com segurança: o que ela faz bem, onde costuma errar e quais dados nunca devem ser compartilhados.
+
+Exemplo: a equipe de um escritório aprende a revisar uma minuta feita com IA e a perceber quando a resposta inventou uma informação.
+
+### Treinamento sobre Claude e Claude Code
+
+Treinamento prático no Claude, o assistente de IA da Anthropic, e no Claude Code, que trabalha direto no código e no terminal. Da configuração ao uso diário, com foco em segurança e boas práticas.
+
+Exemplo: a equipe aprende a organizar projetos no Claude, revisar o que ele produz e definir o que ele pode ou não acessar.
+
+### IA para desenvolvedores
+
+Treinamento para desenvolvedores que querem acelerar o desenvolvimento com IA sem abrir mão da qualidade: planejamento, revisão de código, testes e cuidado com o que vai para produção.
+
+Exemplo: um time passa a usar agentes de código para escrever testes e revisar alterações, mantendo a revisão humana antes de cada entrega.
 
 ### O que é Outcome as a Service?
 

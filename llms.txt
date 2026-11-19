@@ -24,6 +24,9 @@
 - [Integração de sistemas legados com IA](https://ocellatuslab.github.io/#integracao): conecta o sistema jurídico, o prontuário eletrônico ou o ERP existente a recursos de IA, sem trocar tudo.
 - [Outcome as a Service](https://ocellatuslab.github.io/#outcome-as-a-service): o cliente paga pelo resultado entregue, definido e medido em conjunto, e não por horas ou licenças.
 - [Transformação digital](https://ocellatuslab.github.io/#transformacao-digital): diagnóstico, automação, IA e integração planejados em etapas.
+- [Treinamento de IA](https://ocellatuslab.github.io/#treinamento-ia): uso de IA no dia a dia com segurança, para profissionais e equipes.
+- [Treinamento sobre Claude e Claude Code](https://ocellatuslab.github.io/#treinamento-claude): uso prático do assistente Claude e do Claude Code, com foco em segurança e boas práticas.
+- [IA para desenvolvedores](https://ocellatuslab.github.io/#treinamento-desenvolvedores): treinamento para acelerar o desenvolvimento de software com IA, sem abrir mão da qualidade.
 
 ## Diferenciais
 

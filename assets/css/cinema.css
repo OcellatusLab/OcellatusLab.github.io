@@ -331,7 +331,7 @@
     --cartao: min(82vw, 23rem);
     --vao: 1.25rem;
     --inicio: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
-    --largura: calc(var(--inicio) + 6 * var(--cartao) + 5 * var(--vao) + var(--gutter));
+    --largura: calc(var(--inicio) + 9 * var(--cartao) + 8 * var(--vao) + var(--gutter));
     --desloc: max(0px, calc(var(--largura) - 100vw));
     height: calc(100vh + var(--desloc) * 1.1);
     height: calc(100svh + var(--desloc) * 1.1);
