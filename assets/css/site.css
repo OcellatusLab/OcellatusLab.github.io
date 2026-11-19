@@ -28,32 +28,34 @@
 
 /* --------------------------------------------------------------------------
    Tokens
-   Paleta oficial: laranja #F5813E, pêssego #FFBF9A, branco, preto.
-   Neutros quentes derivados para texto secundário, fundos e bordas.
-   Contraste (WCAG): laranja sobre branco = 2,6:1 (só decorativo ou texto
-   grande em fundo escuro); preto sobre laranja = 8,1:1; laranja sobre
-   preto = 8,1:1; --cinza-700 sobre --creme = 9,7:1.
+   Identidade visual 2026: laranja #F26A21, grafite #1C1B1F, cinza #5F5A63,
+   branco. Neutros derivados do grafite para fundos e bordas.
+   Contraste (WCAG): laranja sobre branco = 3,1:1 (só linhas, ícones e
+   elementos gráficos, nunca texto comum); grafite sobre laranja = 5,6:1
+   (botão principal); cinza #5F5A63 sobre branco = 6,7:1 e sobre --creme
+   = 6,3:1; --cinza-400 sobre grafite = 8,0:1; laranja sobre grafite = 5,6:1.
    -------------------------------------------------------------------------- */
 :root {
-  --laranja: #f5813e;
-  --pessego: #ffbf9a;
+  --laranja: #f26a21;
+  --laranja-claro: #f58d52;
+  --grafite: #1c1b1f;
   --branco: #ffffff;
-  --preto: #000000;
 
-  --cinza-950: #0c0a09;
-  --cinza-900: #1c1917;
-  --cinza-800: #292524;
-  --cinza-700: #44403c;
-  --cinza-400: #a8a29e;
-  --cinza-200: #e7e5e4;
-  --creme: #faf8f6;
+  --cinza-950: #131215;
+  --cinza-900: var(--grafite);
+  --cinza-800: #2f2d33;
+  --cinza-700: #5f5a63;
+  --cinza-400: #b5b0b8;
+  --cinza-200: #e8e6ea;
+  --creme: #f8f7f6;
 
   /* Papéis (tema claro) */
   --fundo: var(--branco);
   --fundo-alt: var(--creme);
+  --fundo-escuro: var(--grafite);
   --texto: var(--cinza-900);
   --texto-suave: var(--cinza-700);
-  --titulo: var(--preto);
+  --titulo: var(--grafite);
   --linha: var(--cinza-200);
   --acento: var(--laranja);
   --link: var(--cinza-900);
@@ -68,8 +70,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fundo: var(--preto);
-    --fundo-alt: var(--cinza-950);
+    --fundo: var(--grafite);
+    --fundo-alt: #232227;
+    --fundo-escuro: var(--cinza-950);
     --texto: var(--cinza-200);
     --texto-suave: var(--cinza-400);
     --titulo: var(--branco);
@@ -132,7 +135,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   top: -3rem;
   z-index: 100;
   padding: 0.5rem 1rem;
-  background: var(--preto);
+  background: var(--grafite);
   color: var(--branco);
   border-radius: 0.5rem;
 }
@@ -189,8 +192,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   text-decoration: none;
   transition: background-color var(--transicao), border-color var(--transicao), color var(--transicao);
 }
-.botao--primario { background: var(--laranja); color: var(--preto); }
-.botao--primario:hover { background: var(--pessego); }
+.botao--primario { background: var(--laranja); color: var(--grafite); }
+.botao--primario:hover { background: var(--laranja-claro); }
 .botao--secundario { border-color: currentColor; color: var(--titulo); }
 .botao--secundario:hover { border-color: var(--acento); }
 .botao--pequeno { min-height: 2.5rem; padding: 0.5rem 1.1rem; font-size: 0.9rem; }
@@ -238,7 +241,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   margin-inline: auto;
   padding: 0.6rem var(--gutter);
 }
-.topo__logo img { width: 136px; height: auto; }
+.topo__logo img { width: 150px; height: auto; }
 .topo__nav { display: none; }
 
 /* --------------------------------------------------------------------------
@@ -257,7 +260,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   aspect-ratio: 1;
   pointer-events: none;
 }
-.hero__fundo img { width: 100%; opacity: 0.35; }
+.hero__fundo picture { position: absolute; inset: 0; display: grid; place-items: center; }
+.hero__fundo img { width: 62%; opacity: 0.14; }
 .hero__curva {
   position: absolute;
   inset: -8%;
@@ -270,9 +274,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   opacity: 0.7;
 }
 .hero__conteudo { position: relative; }
-@media (prefers-color-scheme: dark) {
-  .hero__fundo img { opacity: 0.18; }
-}
 .hero h1 { max-width: 18ch; margin-bottom: 1.5rem; }
 .hero__sub { max-width: 40rem; color: var(--texto-suave); font-size: 1.1em; margin-bottom: 2rem; }
 .hero__pilares {
@@ -396,13 +397,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* Segurança (sempre escura, nos dois temas) */
 .secao--escura {
-  --fundo: var(--preto);
+  --fundo: var(--fundo-escuro);
   --titulo: var(--branco);
   --texto: var(--cinza-200);
   --texto-suave: var(--cinza-400);
   --linha: var(--cinza-800);
   --link: var(--branco);
-  background: var(--preto);
+  background: var(--fundo-escuro);
   color: var(--texto);
   border-block: 1px solid var(--linha);
 }
@@ -410,9 +411,16 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .garantias h3 { font-weight: 500; }
 .garantias p { color: var(--texto-suave); font-size: 0.95em; }
 
+/* Portfólio */
+.projeto { display: flex; flex-direction: column; }
+.projeto__tipo { color: var(--texto-suave); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.projeto h3 { font-weight: 600; }
+.projeto > p:not(.projeto__tipo):not(.projeto__link) { color: var(--texto-suave); }
+.projeto__link { margin-top: auto; padding-top: 1rem; font-weight: 500; }
+
 /* Sobre */
 .sobre { display: grid; gap: clamp(2rem, 6vw, 4rem); align-items: center; }
-.sobre__foto { margin: 0; max-width: 16rem; }
+.sobre__foto { margin: 0; max-width: 9rem; justify-self: center; }
 .sobre__foto img { width: 100%; }
 .sobre__texto strong { color: var(--titulo); font-weight: 500; }
 .sobre__nome { color: var(--texto-suave); font-size: 0.92em; }
@@ -471,7 +479,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   color: var(--texto-suave);
 }
 .rodape__interno { display: grid; gap: 2rem; }
-.rodape__marca img { width: 150px; margin-bottom: 0.75rem; }
+.rodape__marca img { width: 170px; margin-bottom: 0.75rem; }
 .rodape__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 .rodape__links a { color: var(--texto); text-decoration: none; }
 .rodape__links a:hover { text-decoration: underline; text-decoration-color: var(--acento); }
@@ -484,7 +492,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .pagina ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
 .pagina li { margin-bottom: 0.4rem; }
 .erro { display: grid; justify-items: center; text-align: center; min-height: 70vh; align-content: center; gap: 1rem; }
-.erro img { width: 10rem; }
+.erro img { width: 7rem; }
 .erro .rotulo { justify-content: center; }
 
 /* --------------------------------------------------------------------------
@@ -499,24 +507,21 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 @media (min-width: 56rem) {
-  .topo__logo img { width: 170px; }
+  .topo__logo img { width: 180px; }
   .topo__nav { display: block; }
   .topo__nav ul { display: flex; gap: 1.75rem; }
   .topo__nav a { color: var(--texto); text-decoration: none; font-size: 0.95rem; }
   .topo__nav a:hover { color: var(--titulo); text-decoration: underline; text-decoration-color: var(--acento); }
   .grade--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .hero__fundo { right: 2%; top: 50%; transform: translateY(-50%); width: min(30rem, 36vw); }
-  .hero__fundo img { opacity: 0.9; }
-  @media (prefers-color-scheme: dark) {
-    .hero__fundo img { opacity: 0.55; }
-  }
+  .hero__fundo img { opacity: 1; }
   .etapas { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
   .etapa { padding: 3.75rem 0 0; }
   .etapa::before { top: 0; }
   .etapa::after { left: 3.25rem; right: -1.5rem; top: 1.25rem; bottom: auto; width: auto; height: 1px; }
   .etapa:last-child::after { display: none; }
   .sobre { grid-template-columns: 18rem 1fr; }
-  .sobre__foto { max-width: none; }
+  .sobre__foto { max-width: 11rem; }
 }
 
 /* --------------------------------------------------------------------------

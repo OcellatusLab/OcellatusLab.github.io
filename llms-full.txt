@@ -142,6 +142,40 @@ Construo em etapas, com controle de acesso, registro de ações e testes antes d
 
 Depois da entrega, acompanho os resultados e os registros. Tudo o que a IA fez pode ser consultado e revisado.
 
+## Projetos no ar
+
+Alguns sites e plataformas em que a Ocellatus trabalhou.
+
+Advocacia empresarial · Manaus (AM)
+
+### Assis & Pereira Advogados
+
+Site do escritório, com áreas de atuação, perfis dos advogados, perguntas frequentes, formulário de contato e atendimento pelo WhatsApp.
+
+assisepereira.com.br
+
+Marketing e tecnologia para advocacia
+
+### ADV tá ON Hub Digital
+
+Site do hub que cria sites, gerencia campanhas e implanta automações e ferramentas de IA para escritórios, com apresentação das soluções e pedido de proposta.
+
+advtaon.com
+
+Portal de notícias · Manaus (AM)
+
+### Portal Cabocla
+
+Portal de notícias de Manaus e do Amazonas, com editorias, colunistas, guia de empresas, mídia kit e cadastro na newsletter.
+
+portalcabocla.com.br
+
+Plataforma web
+
+### FarolJuris
+
+faroljuris.com.br
+
 ## Segurança não é um item da lista. É o ponto de partida.
 
 Advogados e médicos respondem pelo sigilo de quem atendem. Por isso, cada projeto da Ocellatus segue estes princípios desde o desenho.

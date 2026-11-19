@@ -9,7 +9,7 @@
   <meta name="description" content="Agentes de IA seguros e auditáveis e transformação digital para escritórios de advocacia e clínicas médicas. LGPD desde o desenho.">
   <link rel="canonical" href="https://ocellatuslab.github.io/">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#1c1b1f" media="(prefers-color-scheme: dark)">
   <meta name="color-scheme" content="light dark">
 
   <meta property="og:type" content="website">
@@ -29,6 +29,7 @@
   <meta name="twitter:image:alt" content="Logo da Ocellatus e o texto: Agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.">
 
   <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/img/icone.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/img/icon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -222,10 +223,8 @@
     <div class="topo__interno">
       <a class="topo__logo" href="#inicio" aria-label="Ocellatus, voltar ao início">
         <picture>
-          <source srcset="/assets/img/logo-horizontal-white.avif" type="image/avif" media="(prefers-color-scheme: dark)">
-          <source srcset="/assets/img/logo-horizontal-white.webp" type="image/webp" media="(prefers-color-scheme: dark)">
-          <source srcset="/assets/img/logo-horizontal-black.avif" type="image/avif">
-          <img src="/assets/img/logo-horizontal-black.webp" width="170" height="71" alt="Ocellatus Tecnologia &amp; Desenvolvimento">
+          <source srcset="/assets/img/logo-horizontal-escuro.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+          <img src="/assets/img/logo-horizontal-claro.svg" width="180" height="53" alt="Ocellatus Tecnologia &amp; Desenvolvimento">
         </picture>
       </a>
       <nav class="topo__nav" aria-label="Seções do site">
@@ -233,6 +232,7 @@
           <li><a href="#para-quem">Para quem</a></li>
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#como-trabalho">Como trabalho</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
           <li><a href="#seguranca">Segurança</a></li>
           <li><a href="#faq">Dúvidas</a></li>
         </ul>
@@ -246,10 +246,8 @@
     <section class="hero" id="inicio" aria-labelledby="titulo-hero">
       <div class="hero__fundo" aria-hidden="true">
         <picture>
-          <source srcset="/assets/img/peixe-branco.avif" type="image/avif" media="(prefers-color-scheme: dark)">
-          <source srcset="/assets/img/peixe-branco.webp" type="image/webp" media="(prefers-color-scheme: dark)">
-          <source srcset="/assets/img/peixe-pessego.avif" type="image/avif">
-          <img src="/assets/img/peixe-pessego.webp" width="720" height="705" alt="" fetchpriority="high">
+          <source srcset="/assets/img/simbolo-escuro.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+          <img src="/assets/img/simbolo-claro.svg" width="108" height="125" alt="" fetchpriority="high">
         </picture>
         <svg class="hero__curva" viewBox="0 0 600 600" focusable="false"><circle cx="300" cy="300" r="290" /></svg>
       </div>
@@ -419,6 +417,40 @@
       </div>
     </section>
 
+    <!-- Portfólio -->
+    <section class="secao secao--alt" id="portfolio" aria-labelledby="titulo-portfolio">
+      <div class="container">
+        <p class="rotulo">Portfólio</p>
+        <h2 id="titulo-portfolio">Projetos no ar</h2>
+        <p class="intro">Alguns sites e plataformas em que a Ocellatus trabalhou.</p>
+        <ul class="grade grade--2 portfolio">
+          <li class="cartao projeto revelar">
+            <p class="projeto__tipo">Advocacia empresarial · Manaus (AM)</p>
+            <h3>Assis &amp; Pereira Advogados</h3>
+            <p>Site do escritório, com áreas de atuação, perfis dos advogados, perguntas frequentes, formulário de contato e atendimento pelo WhatsApp.</p>
+            <p class="projeto__link"><a href="https://www.assisepereira.com.br/">assisepereira.com.br</a></p>
+          </li>
+          <li class="cartao projeto revelar">
+            <p class="projeto__tipo">Marketing e tecnologia para advocacia</p>
+            <h3>ADV tá ON Hub Digital</h3>
+            <p>Site do hub que cria sites, gerencia campanhas e implanta automações e ferramentas de IA para escritórios, com apresentação das soluções e pedido de proposta.</p>
+            <p class="projeto__link"><a href="https://advtaon.com/">advtaon.com</a></p>
+          </li>
+          <li class="cartao projeto revelar">
+            <p class="projeto__tipo">Portal de notícias · Manaus (AM)</p>
+            <h3>Portal Cabocla</h3>
+            <p>Portal de notícias de Manaus e do Amazonas, com editorias, colunistas, guia de empresas, mídia kit e cadastro na newsletter.</p>
+            <p class="projeto__link"><a href="https://portalcabocla.com.br/">portalcabocla.com.br</a></p>
+          </li>
+          <li class="cartao projeto revelar">
+            <p class="projeto__tipo">Plataforma web</p>
+            <h3>FarolJuris</h3>
+            <p class="projeto__link"><a href="http://faroljuris.com.br/">faroljuris.com.br</a></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- 6. Segurança e conformidade -->
     <section class="secao secao--escura" id="seguranca" aria-labelledby="titulo-seguranca">
       <div class="container">
@@ -462,10 +494,8 @@
         <figure class="sobre__foto">
           <!-- PREENCHER: trocar pela foto do fundador (WebP/AVIF, 480×480, com alt descritivo). -->
           <picture>
-            <source srcset="/assets/img/submarca-white.avif" type="image/avif" media="(prefers-color-scheme: dark)">
-            <source srcset="/assets/img/submarca-white.webp" type="image/webp" media="(prefers-color-scheme: dark)">
-            <source srcset="/assets/img/submarca-color.avif" type="image/avif">
-            <img src="/assets/img/submarca-color.webp" width="400" height="422" alt="Símbolo da Ocellatus: a letra O formada pelo peixe Oscar" loading="lazy" decoding="async">
+            <source srcset="/assets/img/simbolo-escuro.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+            <img src="/assets/img/simbolo-claro.svg" width="108" height="125" alt="Símbolo da Ocellatus" loading="lazy" decoding="async">
           </picture>
         </figure>
         <div class="sobre__texto">
@@ -540,10 +570,8 @@
     <div class="container rodape__interno">
       <div class="rodape__marca">
         <picture>
-          <source srcset="/assets/img/logo-horizontal-white.avif" type="image/avif" media="(prefers-color-scheme: dark)">
-          <source srcset="/assets/img/logo-horizontal-white.webp" type="image/webp" media="(prefers-color-scheme: dark)">
-          <source srcset="/assets/img/logo-horizontal-black.avif" type="image/avif">
-          <img src="/assets/img/logo-horizontal-black.webp" width="170" height="71" alt="Ocellatus Tecnologia &amp; Desenvolvimento" loading="lazy" decoding="async">
+          <source srcset="/assets/img/logo-horizontal-escuro.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+          <img src="/assets/img/logo-horizontal-claro.svg" width="180" height="53" alt="Ocellatus Tecnologia &amp; Desenvolvimento" loading="lazy" decoding="async">
         </picture>
         <p>Software seguro e auditável para advocacia e saúde.</p>
         <!-- PREENCHER (opcional): <p>CNPJ PREENCHER_CNPJ</p> -->

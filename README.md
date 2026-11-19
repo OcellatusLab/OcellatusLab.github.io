@@ -15,7 +15,7 @@ site.webmanifest, favicon.ico
 assets/css/site.css        estilos e tokens de cor (início do arquivo)
 assets/js/site.js          animação de entrada (o site funciona sem ele)
 assets/fonts/              Prompt 400/500/600 em woff2 (licença OFL)
-assets/img/                logos, peixe decorativo, ícones e imagem Open Graph
+assets/img/                logos e símbolo (SVG), ícones e imagem Open Graph
 .github/workflows/pages.yml  publicação automática
 tools/                     scripts opcionais para regenerar imagens e llms-full.txt
 ```
@@ -74,20 +74,21 @@ Revise o resultado. O `CNAME` do `www`, que aponta para `ocellatuslab.github.io`
 
 ## Regenerar imagens (opcional)
 
-Só é necessário se a marca mudar. Extraia o zip oficial da marca e rode:
+Só é necessário se a marca mudar. Extraia o zip da identidade visual (arquivos `ocellatus-*.svg/png`) e rode:
 
 ```bash
 python3 -m pip install pillow
-python3 tools/gerar-assets.py "/caminho/OCELLATUS ARQUIVO" /caminho/Prompt-SemiBold.ttf
+python3 tools/gerar-assets.py /caminho/ocellatus-identidade-2026-logos
+node tools/gerar-og.js
 ```
 
-O script gera os logos (AVIF + WebP), o peixe decorativo, os ícones, o `favicon.ico` e a imagem Open Graph (`og.jpg`, 1200×630).
+O primeiro script copia os logos e o símbolo em SVG (versões para fundo claro e escuro) e gera os ícones PNG e o `favicon.ico`. O segundo gera a imagem Open Graph (`og.jpg`, 1200×630) com o Playwright.
 
 ## Decisões técnicas
 
 - **Segurança:** CSP por `<meta>` sem `unsafe-inline` (o GitHub Pages não permite cabeçalhos próprios). O site não tem cookies, formulários nem scripts de terceiros.
 - **Fontes:** Prompt self-hosted, recortada para o alfabeto latino, com `font-display: swap` e preload.
-- **Cores:** tokens no início de `site.css`. O laranja `#F5813E` não é usado em texto comum sobre fundo claro (contraste 2,6:1). Ele aparece em linhas, ícones e botões com texto preto (8,1:1).
+- **Cores:** identidade 2026, com laranja `#F26A21`, grafite `#1C1B1F` e cinza `#5F5A63`, em tokens no início de `site.css`. O laranja não é usado em texto comum sobre fundo claro (contraste 3,1:1). Ele aparece em linhas, ícones e botões com texto grafite (5,6:1).
 - **Modo escuro:** automático via `prefers-color-scheme`.
 - **Acessibilidade:** o conteúdo aparece sem JavaScript, e as animações respeitam `prefers-reduced-motion`.
 - **Analytics:** nenhum. Se um dia for necessário, use uma opção sem cookies (Plausible ou Umami). Adicione o domínio dela ao `script-src` e ao `connect-src` da CSP e atualize a política de privacidade.
