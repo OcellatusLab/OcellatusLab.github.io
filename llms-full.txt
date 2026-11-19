@@ -174,7 +174,7 @@ Plataforma jurídica
 
 ### FarolJuris
 
-Plataforma que consulta, monitora e exporta intimações, citações e editais publicados no Diário de Justiça Eletrônico Nacional (DJEN), usando a API pública do CNJ.
+Plataforma que consulta, monitora e exporta intimações, citações e editais publicados no Diário de Justiça Eletrônico Nacional (DJEN).
 
 faroljuris.com.br
 
