@@ -1,0 +1,496 @@
+/* ==========================================================================
+   Ocellatus — versão scrollytelling (camada sobre site.css)
+
+   Três camadas, nesta ordem:
+   1. Base: layout estático, que vale sem JavaScript e com movimento reduzido.
+   2. .cine: ligado por cine-init.js quando não há pedido de movimento reduzido.
+   3. Cenas fixas (pin): só em telas com altura suficiente para caber cada cena.
+
+   O JavaScript só escreve números: --p (avanço da cena fixa, 0 a 1),
+   --v (avanço de um elemento que atravessa a tela) e --rolagem (página toda).
+   Tudo o que se move usa transform, opacity ou clip-path.
+   ========================================================================== */
+
+:root {
+  --curva: cubic-bezier(0.22, 1, 0.36, 1);
+  --topo-altura: 4.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   1. Base
+   -------------------------------------------------------------------------- */
+.progresso { display: none; }
+.logo-escuro { display: none; }
+@media (prefers-color-scheme: dark) {
+  .logo-claro { display: none; }
+  .logo-escuro { display: block; }
+}
+
+/* Abertura (sempre escura, nos dois temas) */
+.abertura {
+  --fundo: var(--grafite);
+  --titulo: var(--branco);
+  --texto: var(--cinza-200);
+  --texto-suave: var(--cinza-400);
+  --linha: var(--cinza-800);
+  position: relative;
+  overflow: clip;
+  background: var(--grafite);
+  color: var(--texto);
+}
+.abertura .cena__palco {
+  position: relative;
+  display: grid;
+  align-content: center;
+  gap: 2.5rem;
+  padding-block: clamp(3rem, 10vw, 6rem) clamp(3.5rem, 9vw, 6rem);
+}
+.abertura__simbolo {
+  position: relative;
+  justify-self: center;
+  width: min(15rem, 56vw);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+.abertura__aneis { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.anel { fill: none; stroke: var(--laranja); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.anel--1 { opacity: 0.9; stroke-dasharray: 1400 435; }
+.anel--2 { opacity: 0.35; stroke-dasharray: 4 14; }
+.anel--3 { opacity: 0.18; }
+.abertura__peixe { position: relative; width: 52%; height: auto; overflow: visible; }
+.abertura h1 { max-width: 20ch; margin-bottom: 1.5rem; }
+.abertura .hero__sub { max-width: 38rem; }
+.abertura .hero__pilares { margin-top: 2.5rem; }
+.abertura__dica { display: none; }
+
+/* Manifesto */
+.manifesto .cena__palco { padding-block: var(--secao-y) clamp(2rem, 5vw, 3rem); }
+.manifesto__frase {
+  max-width: 16ch;
+  font-size: clamp(2.3rem, 1.2rem + 5.4vw, 5.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+.manifesto__acento { color: var(--laranja); }
+.problemas { padding-bottom: var(--secao-y); }
+.problemas__num {
+  display: block;
+  margin-bottom: 1.25rem;
+  color: var(--laranja);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.secao--escura .lista-problemas .cartao { background: color-mix(in srgb, var(--branco) 3%, transparent); }
+.lista-problemas .cartao::before { display: none; }
+.lista-problemas .cartao { padding-top: clamp(1.5rem, 4vw, 2rem); }
+.secao--escura .destaque { color: var(--branco); }
+
+/* Para quem e Segurança: duas colunas, título parado e conteúdo passando */
+.duo__grade { display: grid; gap: clamp(2rem, 5vw, 3rem); }
+.duo__rolagem { display: grid; gap: clamp(1rem, 3vw, 1.5rem); }
+.duo__marcadores { display: none; }
+
+/* Serviços */
+#servicos { padding-bottom: var(--secao-y); }
+.trilho .cena__palco { padding-top: var(--secao-y); }
+.trilho__faixa { display: grid; gap: clamp(1rem, 3vw, 1.5rem); padding-inline: var(--gutter); max-width: var(--container); margin-inline: auto; }
+.servico__num { color: var(--texto-suave); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; margin-bottom: 1rem; }
+.servico { gap: 0; }
+.trilho__barra { display: none; }
+.trilho__depois .definicao { margin-top: clamp(2rem, 5vw, 3rem); }
+
+/* Como trabalho */
+.etapas-cena .cena__palco { padding-block: var(--secao-y); }
+.etapas-cena__linha { display: none; }
+
+/* Segurança */
+.seguranca__selo { display: none; }
+.seguranca .garantias li { padding-top: 1.25rem; border-top: 1px solid var(--acento); }
+
+/* Sobre */
+.sobre__foto { position: relative; }
+
+/* Contato */
+.final .cena__palco { position: relative; padding-block: var(--secao-y); }
+.final__disco { display: none; }
+
+@media (min-width: 40rem) {
+  .trilho__faixa { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 56rem) {
+  .abertura .cena__palco { grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+  .abertura__texto { grid-row: 1; grid-column: 1; padding-inline: 0; }
+  .abertura__simbolo { grid-row: 1; grid-column: 2; width: min(28rem, 34vw); }
+  .duo__grade { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(3rem, 6vw, 6rem); align-items: start; }
+  .duo__fixo { position: sticky; top: calc(var(--topo-altura) + 2.5rem); }
+  .duo__marcadores { display: flex; gap: 0.5rem; margin-top: 2rem; }
+  .seguranca .duo__rolagem { grid-template-columns: 1fr; }
+  .seguranca__selo { display: grid; place-items: center; position: relative; width: min(16rem, 22vw); aspect-ratio: 1; margin-top: 2.5rem; }
+  .seguranca__selo svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+  .seguranca__selo circle { fill: none; stroke-width: 2; vector-effect: non-scaling-stroke; }
+  .seguranca__trilha { stroke: var(--cinza-800); }
+  .seguranca__anel { stroke: var(--laranja); stroke-dasharray: 1760; stroke-dashoffset: 0; }
+  .seguranca__selo img { width: 42%; }
+  .trilho__faixa { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* --------------------------------------------------------------------------
+   2. Modo cinematográfico (com JS e sem movimento reduzido)
+   -------------------------------------------------------------------------- */
+.cine .progresso {
+  display: block;
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  height: 2px;
+  pointer-events: none;
+}
+.cine .progresso span {
+  display: block;
+  height: 100%;
+  background: var(--laranja);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--rolagem, 0));
+}
+
+/* Cabeçalho flutua sobre as cenas e troca de tom conforme o fundo */
+.cine .topo {
+  position: fixed;
+  inset: 0 0 auto;
+  transition: background-color 250ms ease, border-color 250ms ease;
+}
+.cine .topo--escuro { background: color-mix(in srgb, var(--grafite) 72%, transparent); border-bottom-color: transparent; }
+.cine .topo--escuro .logo-claro { display: none; }
+.cine .topo--escuro .logo-escuro { display: block; }
+.cine .topo--escuro .topo__nav a { color: var(--cinza-200); }
+.cine .topo--escuro .topo__nav a:hover { color: var(--branco); }
+.cine #inicio .cena__palco { padding-top: calc(var(--topo-altura) + clamp(2rem, 6vw, 4rem)); }
+
+/* Entrada do título principal, palavra por palavra, ao carregar */
+.cine .abertura h1 .palavra {
+  display: inline-block;
+  animation: subir 900ms var(--curva) backwards;
+  animation-delay: calc(var(--i) * 45ms + 150ms);
+}
+.cine .abertura .rotulo,
+.cine .abertura .hero__sub,
+.cine .abertura .acoes,
+.cine .abertura .hero__pilares { animation: aparecer 900ms var(--curva) backwards; }
+.cine .abertura .rotulo { animation-delay: 50ms; }
+.cine .abertura .hero__sub { animation-delay: 700ms; }
+.cine .abertura .acoes { animation-delay: 850ms; }
+.cine .abertura .hero__pilares { animation-delay: 1000ms; }
+.cine .anel--1 { stroke-dasharray: 1835; animation: desenhar 2200ms var(--curva) 200ms both; }
+.cine .abertura__peixe { animation: surgir 1400ms var(--curva) backwards; }
+
+@keyframes subir { from { opacity: 0; transform: translateY(0.6em); } }
+@keyframes aparecer { from { opacity: 0; transform: translateY(12px); } }
+@keyframes surgir { from { opacity: 0; transform: scale(0.85) rotate(-12deg); } }
+@keyframes desenhar { from { stroke-dashoffset: 1835; } to { stroke-dashoffset: 0; } }
+
+/* Revelações e profundidade (valem em qualquer altura de tela) */
+.cine .portfolio .projeto {
+  transform: translateY(calc((0.5 - var(--v, 0.5)) * var(--vel, 40px)));
+}
+.cine .portfolio .projeto:nth-child(even) { --vel: 90px; }
+.cine .portfolio .projeto.revelar:not(.visivel) { transform: translateY(calc((0.5 - var(--v, 0.5)) * var(--vel, 40px) + 24px)); }
+.cine .portfolio .projeto.revelar { transition: opacity 700ms ease, transform 120ms linear; }
+
+.cine .sobre__foto img {
+  clip-path: circle(calc(clamp(0.08, var(--v, 1) * 2.4 - 0.35, 0.75) * 100%) at 50% 50%);
+  transform: scale(calc(1.12 - clamp(0, var(--v, 1) * 2 - 0.3, 1) * 0.12));
+}
+.cine .sobre__foto::before {
+  content: "";
+  position: absolute;
+  inset: -6%;
+  border: 1px solid var(--laranja);
+  border-radius: 50%;
+  opacity: calc(1 - clamp(0, var(--v, 1) * 2.4 - 0.6, 1));
+  transform: scale(calc(0.6 + clamp(0, var(--v, 1) * 2.4 - 0.35, 1) * 0.5));
+  pointer-events: none;
+}
+.cine .sobre__foto picture { display: block; overflow: hidden; border-radius: var(--raio); }
+
+.cine .lista-problemas .cartao.revelar:nth-child(2) { transition-delay: 120ms; }
+.cine .lista-problemas .cartao.revelar:nth-child(3) { transition-delay: 240ms; }
+.cine .seguranca .garantias li.revelar { transition-duration: 800ms; }
+
+/* Marcadores de setor */
+.cine .duo__marcadores li {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+}
+.cine .duo__marcadores li.ativo { background: var(--grafite); border-color: var(--grafite); color: var(--branco); }
+@media (prefers-color-scheme: dark) {
+  .cine .duo__marcadores li.ativo { background: var(--laranja); border-color: var(--laranja); color: var(--grafite); }
+}
+
+/* Anel da segurança acompanha a rolagem da seção */
+.cine .seguranca__anel { stroke-dashoffset: calc((1 - clamp(0, (var(--v, 1) - 0.15) / 0.55, 1)) * 1760); }
+.cine .seguranca__selo img { transform: rotate(calc(var(--v, 0.5) * 40deg - 20deg)); }
+
+/* --------------------------------------------------------------------------
+   3. Cenas fixas: só quando a tela tem altura para cada uma
+   -------------------------------------------------------------------------- */
+.cena { --p: 0; }
+
+@media (min-height: 40rem) {
+  .cine .cena { position: relative; }
+  .cine .cena > .cena__palco {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100svh;
+    overflow: clip;
+  }
+
+  /* ---- Abertura: segura o texto, depois mergulha no olho do peixe ---- */
+  .cine .abertura { height: 215vh; height: 215svh; overflow: visible; }
+  .cine .abertura .cena__palco { align-content: center; gap: 1.75rem; padding-bottom: 3rem; }
+  .cine .abertura { --q: clamp(0, (var(--p) - 0.32) / 0.68, 1); }
+  .cine .abertura__texto {
+    opacity: clamp(0, 1 - (var(--p) - 0.18) * 4.5, 1);
+    transform: translateY(calc(var(--p) * -14vh));
+  }
+  .cine .abertura__simbolo {
+    transform-origin: 38.5% 41.6%;
+    transform:
+      translate(calc(var(--q) * var(--centrar-x, 0px)), calc(var(--q) * var(--centrar-y, 0px)))
+      scale(calc(1 + var(--q) * var(--q) * var(--q) * var(--zoom, 80)));
+  }
+  .cine .abertura__aneis {
+    transform: rotate(calc(var(--p) * 140deg));
+    opacity: calc(1 - var(--q) * 3);
+  }
+  .cine .anel--2 { transform-box: fill-box; transform-origin: 50% 50%; transform: scale(calc(1 - var(--p) * 0.12)); }
+  .cine .abertura__peixe { rotate: calc(var(--p) * -8deg); }
+  .cine .abertura__olho { opacity: calc(1 - var(--q) * 6); }
+  .cine .abertura__dica {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+    margin: 0;
+    color: var(--cinza-400);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    translate: -50% 0;
+    opacity: calc(1 - var(--p) * 12);
+    animation: aparecer 900ms var(--curva) 1400ms backwards;
+  }
+  .cine .abertura__dica span {
+    width: 1px;
+    height: 2.25rem;
+    background: linear-gradient(var(--laranja), transparent);
+    animation: pulso 2s ease-in-out infinite;
+  }
+  @keyframes pulso { 0%, 100% { transform: scaleY(0.4); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } }
+
+  /* ---- Manifesto: as palavras acendem com a rolagem ---- */
+  .cine .manifesto { height: 260vh; height: 260svh; }
+  .cine .manifesto .cena__palco { display: grid; align-content: center; padding-block: var(--topo-altura) 2rem; }
+  /* Palavras ainda apagadas ficam em cinza com contraste mínimo de 3:1 (texto grande). */
+  .cine .manifesto__frase { --alvo: var(--branco); }
+  .cine .manifesto__acento { --alvo: var(--laranja); }
+  .cine .manifesto__frase .palavra {
+    color: color-mix(in srgb, var(--alvo) calc(clamp(0, (var(--p) * 1.55 * var(--n) - var(--i)) * 0.9, 1) * 100%), #6e6a72);
+    transition: color 120ms linear;
+  }
+  .cine .manifesto__intro {
+    opacity: clamp(0, (var(--p) - 0.68) * 5, 1);
+    transform: translateY(calc((1 - clamp(0, (var(--p) - 0.68) * 5, 1)) * 20px));
+  }
+  .cine .manifesto .cena__palco::after {
+    content: "";
+    position: absolute;
+    right: calc(var(--gutter) * -1 + 8vw);
+    bottom: 12vh;
+    width: min(42vw, 26rem);
+    aspect-ratio: 1;
+    border: 1px solid var(--laranja);
+    border-radius: 50%;
+    opacity: 0.25;
+    transform: translateY(calc((0.5 - var(--p)) * 30vh)) scale(calc(0.8 + var(--p) * 0.4));
+    pointer-events: none;
+  }
+
+  /* ---- Serviços: trilho horizontal ---- */
+  .cine .trilho {
+    --cartao: min(82vw, 23rem);
+    --vao: 1.25rem;
+    --inicio: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+    --largura: calc(var(--inicio) + 6 * var(--cartao) + 5 * var(--vao) + var(--gutter));
+    --desloc: max(0px, calc(var(--largura) - 100vw));
+    height: calc(100vh + var(--desloc) * 1.1);
+    height: calc(100svh + var(--desloc) * 1.1);
+  }
+  .cine .trilho .cena__palco {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(1.25rem, 3vh, 2.25rem);
+    padding-block: calc(var(--topo-altura) + 1rem) 1.5rem;
+  }
+  .cine .trilho__cabeca h2 { margin-bottom: 0.5rem; }
+  .cine .trilho__cabeca .intro { margin-bottom: 0; }
+  .cine .trilho__janela { overflow: visible; }
+  .cine .trilho__faixa {
+    display: flex;
+    gap: var(--vao);
+    width: max-content;
+    max-width: none;
+    margin: 0;
+    padding-inline: var(--inicio) var(--gutter);
+    transform: translateX(calc(var(--p) * var(--desloc) * -1));
+  }
+  .cine .trilho__faixa .servico {
+    flex: none;
+    width: var(--cartao);
+    min-height: min(26rem, 52vh);
+    box-shadow: 0 1px 0 var(--linha);
+  }
+  .cine .trilho__barra {
+    display: block;
+    height: 2px;
+    width: 100%;
+  }
+  .cine .trilho__barra span {
+    display: block;
+    height: 100%;
+    background: var(--linha);
+    position: relative;
+    overflow: hidden;
+  }
+  .cine .trilho__barra span::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--laranja);
+    transform-origin: 0 50%;
+    transform: scaleX(var(--p));
+  }
+
+  /* ---- Como trabalho: a linha se desenha e acende cada etapa ---- */
+  .cine .etapas-cena { height: 260vh; height: 260svh; }
+  .cine .etapas-cena .cena__palco { display: grid; align-content: center; padding-block: calc(var(--topo-altura) + 1rem) 1.5rem; }
+  .cine .etapas-cena__trilha { position: relative; }
+  .cine .etapas-cena .etapa { --i: 0; }
+  .cine .etapas-cena .etapa:nth-child(2) { --i: 1; }
+  .cine .etapas-cena .etapa:nth-child(3) { --i: 2; }
+  .cine .etapas-cena .etapa:nth-child(4) { --i: 3; }
+  .cine .etapas-cena .etapa {
+    --a: clamp(0, (var(--p) * 1.25 - var(--i) * 0.3) * 6, 1);
+    transform: translateY(calc((1 - var(--a)) * 14px));
+  }
+  .cine .etapas-cena .etapa h3 { color: color-mix(in srgb, var(--titulo) calc(var(--a) * 100%), var(--texto-suave)); }
+  .cine .etapas-cena .etapa::after { display: none; }
+  .cine .etapas-cena .etapa::before {
+    background: color-mix(in srgb, var(--laranja) calc(var(--a) * 100%), var(--fundo));
+    color: color-mix(in srgb, var(--grafite) calc(var(--a) * 100%), var(--titulo));
+    z-index: 1;
+  }
+  .cine .etapas-cena__linha {
+    display: block;
+    position: absolute;
+    left: 1.25rem;
+    top: 1.1rem;
+    bottom: 2rem;
+    width: 1px;
+    background: var(--linha);
+  }
+  .cine .etapas-cena__linha span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--laranja);
+    transform-origin: 50% 0;
+    transform: scaleY(clamp(0, var(--p) * 1.25 - 0.05, 1));
+  }
+  .cine .etapas-cena .etapa { padding-bottom: 1.4rem; }
+  .cine .etapas-cena .etapa p { font-size: 0.95em; }
+
+  /* ---- Final: o círculo laranja cresce e vira o fundo do convite ---- */
+  .cine .final { height: 200vh; height: 200svh; background: var(--grafite); }
+  .cine .final .cena__palco { display: grid; align-content: center; padding-block: var(--topo-altura) 2rem; }
+  .cine .final__disco {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 160vmax;
+    aspect-ratio: 1;
+    margin: -80vmax 0 0 -80vmax;
+    border-radius: 50%;
+    background: var(--laranja);
+    transform: scale(clamp(0.015, var(--p) * var(--p) * 2.6, 1));
+  }
+  .cine .final .contato {
+    --titulo: var(--grafite);
+    --texto: var(--grafite);
+    --texto-suave: var(--grafite);
+    --link: var(--grafite);
+    --acento: var(--grafite);
+    position: relative;
+    color: var(--grafite);
+    opacity: clamp(0, (var(--p) - 0.5) * 4, 1);
+    transform: translateY(calc((1 - clamp(0, (var(--p) - 0.5) * 4, 1)) * 30px));
+  }
+  .cine .final .rotulo::before { background: var(--grafite); }
+  .cine .final .botao--primario { background: var(--grafite); color: var(--branco); }
+  .cine .final .botao--primario:hover { background: var(--cinza-800); }
+  .cine .final.focada .final__disco { transform: none; }
+  .cine .final.focada .contato { opacity: 1; transform: none; }
+  .cine .final :focus-visible { outline-color: var(--grafite); }
+
+  /* Teclado: conteúdo focado de cena nunca fica invisível */
+  .cine .abertura.focada .abertura__texto { opacity: 1; }
+  .cine .manifesto.focada .manifesto__intro { opacity: 1; }
+}
+
+/* Desktop: ajustes de composição das cenas */
+@media (min-width: 56rem) and (min-height: 40rem) {
+  .cine .abertura .cena__palco { align-content: center; }
+  .cine .abertura__simbolo { --centrar-x: -18vw; }
+  .cine .trilho { --cartao: min(30vw, 24rem); }
+  .cine .etapas-cena .etapas { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
+  .cine .etapas-cena .etapa { padding: 3.75rem 0 0; }
+  .cine .etapas-cena__linha { left: 1.25rem; right: 1.25rem; top: 1.25rem; bottom: auto; width: auto; height: 1px; }
+  .cine .etapas-cena__linha span { transform-origin: 0 50%; transform: scaleX(clamp(0, var(--p) * 1.25 - 0.05, 1)); }
+}
+
+/* Celular alto: símbolo menor acima do texto */
+@media (max-width: 55.99rem) and (min-height: 40rem) {
+  .cine .abertura__simbolo { width: min(9.5rem, 34vw); --centrar-y: 28vh; --zoom: 95; }
+  .cine .abertura h1 { font-size: clamp(1.75rem, 1.2rem + 3vw, 2.4rem); margin-bottom: 1rem; }
+  .cine .abertura .hero__sub { font-size: 1rem; margin-bottom: 1.5rem; }
+  .cine .abertura .hero__pilares { margin-top: 1.5rem; padding-top: 1rem; font-size: 0.82rem; }
+  .cine .abertura__dica { display: none; }
+  .cine .manifesto .cena__palco::after { display: none; }
+  .cine .trilho__faixa .servico { min-height: 0; padding: 1.4rem; font-size: 0.95rem; }
+  .cine .etapas-cena h2 { margin-bottom: 1.25rem; }
+  .cine .etapas-cena .etapa { padding-bottom: 1rem; padding-left: 3.5rem; }
+  .cine .etapas-cena .etapa h3 { margin-bottom: 0.35rem; }
+  .cine .etapas-cena .etapa p { font-size: 0.88rem; line-height: 1.5; }
+}
+
+/* Celular baixo: a abertura não cabe numa tela só, então rola normalmente (as outras cenas continuam). */
+@media (max-width: 55.99rem) and (min-height: 40rem) and (max-height: 47.99rem) {
+  .cine .abertura { height: auto; }
+  .cine .abertura > .cena__palco { position: relative; height: auto; }
+  .cine .abertura__texto { opacity: 1; transform: none; }
+  .cine .abertura__simbolo { transform: none; }
+  .cine .abertura__aneis { opacity: 1; }
+  .cine .abertura__olho { opacity: 1; }
+}

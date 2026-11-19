@@ -29,7 +29,7 @@ jobs:
       - name: Montar o site
         run: |
           mkdir _site
-          cp -r index.html privacidade.html 404.html favicon.ico \
+          cp -r index.html cinema.html privacidade.html 404.html favicon.ico \
                 robots.txt sitemap.xml llms.txt llms-full.txt site.webmanifest \
                 assets .well-known _site/
           if [ -f CNAME ]; then cp CNAME _site/; fi
