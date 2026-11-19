@@ -206,11 +206,11 @@ Decisões que afetam clientes ou pacientes passam por uma pessoa. A IA prepara, 
 
 ## Um desenvolvedor, não um vendedor de IA.
 
-**A Ocellatus é uma empresa de software de PREENCHER_CIDADE/PREENCHER_UF especializada em agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.** Foi fundada por PREENCHER_NOME_FUNDADOR, desenvolvedor de software.
+**A Ocellatus é uma empresa de software de Manaus (AM) especializada em agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.** Foi fundada por Samuelson Brito, desenvolvedor de software.
 
 Escrevo software de verdade e uso IA como ferramenta, não como truque. Em eventos do setor, vi muitos empresários pagarem por promessas, prompts e automações frágeis. A Ocellatus existe para ser o contraponto técnico e honesto.
 
-PREENCHER_BIO
+Programo desde 2012. Nesses mais de dez anos, desenvolvi sistemas para o setor bancário, portuário e de logística, para marketing digital, para a área jurídica e de recursos humanos, além de integrações com sistemas de ponto. Conheço IA pelo lado da engenharia, não do discurso.
 
 O nome vem do Astronotus ocellatus, o peixe Oscar, que junto com a letra O forma o símbolo da marca.
 

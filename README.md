@@ -39,9 +39,6 @@ grep -rn "PREENCHER" --exclude-dir=.git --exclude=README.md .
 
 | Marcador | O que colocar | Onde aparece |
 | --- | --- | --- |
-| `PREENCHER_NOME_FUNDADOR` | Nome completo | Sobre, JSON-LD, llms.txt |
-| `PREENCHER_CIDADE` / `PREENCHER_UF` | Ex.: `Manaus` / `AM` | Sobre, JSON-LD, llms.txt |
-| `PREENCHER_BIO` | Trajetória e por que criou a Ocellatus | Seção Sobre |
 | `PREENCHER_PRAZO_DIAGNOSTICO` | Primeira frase da resposta, ex.: "Em geral, X semanas." | FAQ (HTML e JSON-LD) |
 | `PREENCHER_CNPJ` | Opcional; descomente a linha no rodapé | Rodapé |
 

@@ -1,10 +1,10 @@
 # Ocellatus
 
-> A Ocellatus é uma empresa de software de PREENCHER_CIDADE/PREENCHER_UF especializada em agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas. Trabalha com diagnóstico antes da solução, LGPD desde o desenho, registro de tudo o que a IA faz e supervisão humana.
+> A Ocellatus é uma empresa de software de Manaus (AM) especializada em agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas. Trabalha com diagnóstico antes da solução, LGPD desde o desenho, registro de tudo o que a IA faz e supervisão humana.
 
 - Nome: Ocellatus — Tecnologia & Desenvolvimento
-- Fundador: PREENCHER_NOME_FUNDADOR, desenvolvedor de software
-- Local: PREENCHER_CIDADE/PREENCHER_UF, Brasil
+- Fundador: Samuelson Brito, desenvolvedor de software desde 2012 (setores bancário, portuário e de logística, marketing digital, jurídico, recursos humanos e integrações com sistemas de ponto)
+- Local: Manaus, Amazonas, Brasil
 - Site: https://ocellatuslab.github.io/
 - WhatsApp: +55 92 99239-4653
 - LinkedIn: https://www.linkedin.com/company/145250750/
