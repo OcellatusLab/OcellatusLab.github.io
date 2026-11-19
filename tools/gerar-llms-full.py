@@ -27,7 +27,7 @@ class Conversor(HTMLParser):
         if not self.dentro_main:
             return
         classes = (dict(attrs).get("class") or "").split()
-        if tag in ("script", "style", "svg", "picture", "figure") or {"rotulo", "acoes"} & set(classes):
+        if tag in ("script", "style", "svg", "picture", "figure") or {"rotulo", "acoes", "visualmente-oculto"} & set(classes):
             self.pular += 1
             self.fechar_pulo.append(tag)
         if tag in BLOCOS and not self.pular:
