@@ -170,9 +170,11 @@ Portal de notícias de Manaus e do Amazonas, com editorias, colunistas, guia de 
 
 portalcabocla.com.br
 
-Plataforma web
+Plataforma jurídica
 
 ### FarolJuris
+
+Plataforma que consulta, monitora e exporta intimações, citações e editais publicados no Diário de Justiça Eletrônico Nacional (DJEN), usando a API pública do CNJ.
 
 faroljuris.com.br
 
