@@ -422,8 +422,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* Sobre */
 .sobre { display: grid; gap: clamp(2rem, 6vw, 4rem); align-items: center; }
-.sobre__foto { margin: 0; max-width: 9rem; justify-self: center; }
-.sobre__foto img { width: 100%; }
+.sobre__foto { margin: 0; max-width: 16rem; }
+.sobre__foto img { width: 100%; border-radius: var(--raio); }
 .sobre__texto strong { color: var(--titulo); font-weight: 500; }
 .sobre__nome { color: var(--texto-suave); font-size: 0.92em; }
 
@@ -523,7 +523,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .etapa::after { left: 3.25rem; right: -1.5rem; top: 1.25rem; bottom: auto; width: auto; height: 1px; }
   .etapa:last-child::after { display: none; }
   .sobre { grid-template-columns: 18rem 1fr; }
-  .sobre__foto { max-width: 11rem; }
+  .sobre__foto { max-width: none; }
 }
 
 /* --------------------------------------------------------------------------

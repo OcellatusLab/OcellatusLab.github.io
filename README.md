@@ -42,7 +42,7 @@ grep -rn "PREENCHER" --exclude-dir=.git --exclude=README.md .
 | `PREENCHER_PRAZO_DIAGNOSTICO` | Primeira frase da resposta, ex.: "Em geral, X semanas." | FAQ (HTML e JSON-LD) |
 | `PREENCHER_CNPJ` | Opcional; descomente a linha no rodapé | Rodapé |
 
-Também há dois comentários para revisar em `index.html`. Um é `CONFIRMAR`, na seção de segurança, sobre onde os dados ficam. O outro troca o símbolo da seção Sobre pela sua foto (WebP/AVIF 480×480, com `alt`).
+Também há um comentário para revisar em `index.html`. É o `CONFIRMAR`, na seção de segurança, sobre onde os dados ficam.
 
 Se um dado não existir, apague a frase ou o link inteiro, em vez de deixar o marcador. Depois de editar textos, rode `python3 tools/gerar-llms-full.py` para atualizar o `llms-full.txt`. Nome, cidade e contato precisam ficar idênticos no HTML, no JSON-LD e no `llms.txt`.
 
