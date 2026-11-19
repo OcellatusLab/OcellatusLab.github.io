@@ -86,6 +86,8 @@ O primeiro script copia os logos e o símbolo em SVG (versões para fundo claro 
 
 ## Decisões técnicas
 
+- **E-mail de contato:** desativado por enquanto (nov/2026). Para voltar, reverta o commit "Remove o e-mail de contato do site", que também restaura o JSON-LD, a política de privacidade, o `llms.txt` e o `security.txt`.
+
 - **Segurança:** CSP por `<meta>` sem `unsafe-inline` (o GitHub Pages não permite cabeçalhos próprios). O site não tem cookies, formulários nem scripts de terceiros.
 - **Fontes:** Prompt self-hosted, recortada para o alfabeto latino, com `font-display: swap` e preload.
 - **Cores:** identidade 2026, com laranja `#F26A21`, grafite `#1C1B1F` e cinza `#5F5A63`, em tokens no início de `site.css`. O laranja não é usado em texto comum sobre fundo claro (contraste 3,1:1). Ele aparece em linhas, ícones e botões com texto grafite (5,6:1).
