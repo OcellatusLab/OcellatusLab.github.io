@@ -37,8 +37,10 @@
 
   <link rel="preload" href="/assets/fonts/prompt-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/prompt-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="/assets/js/cine-init.js"></script>
   <link rel="stylesheet" href="/assets/css/site.css">
-  <script src="/assets/js/site.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/cinema.css">
+  <script src="/assets/js/cinema.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -218,14 +220,13 @@
 </head>
 <body>
   <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <div class="progresso" aria-hidden="true"><span></span></div>
 
   <header class="topo">
     <div class="topo__interno">
       <a class="topo__logo" href="#inicio" aria-label="Ocellatus, voltar ao início">
-        <picture>
-          <source srcset="/assets/img/logo-horizontal-escuro.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
-          <img src="/assets/img/logo-horizontal-claro.svg" width="180" height="53" alt="Ocellatus Tecnologia &amp; Desenvolvimento">
-        </picture>
+        <img class="logo-claro" src="/assets/img/logo-horizontal-claro.svg" width="180" height="53" alt="">
+        <img class="logo-escuro" src="/assets/img/logo-horizontal-escuro.svg" width="180" height="53" alt="">
       </a>
       <nav class="topo__nav" aria-label="Seções do site">
         <ul>
@@ -242,47 +243,80 @@
   </header>
 
   <main id="conteudo">
-    <!-- 1. Hero -->
-    <section class="hero" id="inicio" aria-labelledby="titulo-hero">
-      <div class="hero__fundo" aria-hidden="true">
-        <picture>
-          <source srcset="/assets/img/simbolo-escuro.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
-          <img src="/assets/img/simbolo-claro.svg" width="108" height="125" alt="" fetchpriority="high">
-        </picture>
-        <svg class="hero__curva" viewBox="0 0 600 600" focusable="false"><circle cx="300" cy="300" r="290" /></svg>
-      </div>
-      <div class="container hero__conteudo">
-        <p class="rotulo">Tecnologia &amp; Desenvolvimento para advocacia e saúde</p>
-        <h1 id="titulo-hero">Agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.</h1>
-        <p class="hero__sub">Sou desenvolvedor de software de verdade. Primeiro entendo o seu processo, depois construo a solução, com IA quando ela é a resposta e sempre com segurança, LGPD e registro de tudo o que o sistema faz.</p>
-        <div class="acoes">
-          <a class="botao botao--primario" href="https://wa.me/5592992394653?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Ocellatus%20e%20gostaria%20de%20conversar%20sobre%20meu%20escrit%C3%B3rio%2Fminha%20cl%C3%ADnica." rel="noopener noreferrer">Conversar pelo WhatsApp</a>
+
+    <!-- Cena 1. Abertura: o símbolo gira, os anéis se desenham e a câmera mergulha no olho do peixe. -->
+    <section class="cena abertura" id="inicio" data-cena data-tom="escuro" aria-labelledby="titulo-hero">
+      <div class="cena__palco">
+        <div class="abertura__simbolo" aria-hidden="true">
+          <svg class="abertura__aneis" viewBox="0 0 600 600" focusable="false">
+            <circle class="anel anel--1" cx="300" cy="300" r="292" />
+            <circle class="anel anel--2" cx="300" cy="300" r="250" />
+            <circle class="anel anel--3" cx="300" cy="300" r="212" />
+          </svg>
+          <svg class="abertura__peixe" viewBox="-12 -12 108 125" focusable="false">
+            <g transform="translate(-16 -7)">
+              <defs>
+                <clipPath id="ab-c"><circle cx="60" cy="64" r="44"/></clipPath>
+                <mask id="ab-m" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120">
+                  <rect width="120" height="120" fill="#fff"/>
+                  <path clip-path="url(#ab-c)" d="M17.5 52.6 A40 40 0 0 0 63.8 20.2" fill="none" stroke="#000" stroke-width="6.5"/>
+                  <circle cx="34" cy="40" r="8.5" fill="#000"/>
+                </mask>
+              </defs>
+              <g mask="url(#ab-m)" fill="#F26A21">
+                <path d="M63.8 20.2 A18 18 0 0 1 93.7 35.7 L72 52 Z"/>
+                <circle cx="60" cy="64" r="44"/>
+              </g>
+              <circle class="abertura__olho" cx="34" cy="40" r="4.2" fill="#FFFFFF"/>
+            </g>
+          </svg>
         </div>
-        <ul class="hero__pilares" aria-label="Princípios de trabalho">
-          <li>Segurança e LGPD</li>
-          <li>Auditoria de cada ação</li>
-          <li>Escalável</li>
-          <li>Diagnóstico antes da solução</li>
-        </ul>
+
+        <div class="container abertura__texto">
+          <p class="rotulo">Tecnologia &amp; Desenvolvimento para advocacia e saúde</p>
+          <h1 id="titulo-hero" data-palavras>Agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.</h1>
+          <p class="hero__sub">Sou desenvolvedor de software de verdade. Primeiro entendo o seu processo, depois construo a solução, com IA quando ela é a resposta e sempre com segurança, LGPD e registro de tudo o que o sistema faz.</p>
+          <div class="acoes">
+            <a class="botao botao--primario" href="https://wa.me/5592992394653?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Ocellatus%20e%20gostaria%20de%20conversar%20sobre%20meu%20escrit%C3%B3rio%2Fminha%20cl%C3%ADnica." rel="noopener noreferrer">Conversar pelo WhatsApp</a>
+          </div>
+          <ul class="hero__pilares" aria-label="Princípios de trabalho">
+            <li>Segurança e LGPD</li>
+            <li>Auditoria de cada ação</li>
+            <li>Escalável</li>
+            <li>Diagnóstico antes da solução</li>
+          </ul>
+        </div>
+
+        <p class="abertura__dica" aria-hidden="true"><span></span>Role para continuar</p>
       </div>
     </section>
 
-    <!-- 2. O problema -->
-    <section class="secao secao--alt" id="problema" aria-labelledby="titulo-problema">
-      <div class="container">
-        <p class="rotulo">O problema</p>
-        <h2 id="titulo-problema">Muita promessa de IA. Pouca engenharia por trás.</h2>
-        <p class="intro">Escritórios e clínicas passaram a receber ofertas de “IA que resolve tudo”: prompts vendidos como produto, automações montadas às pressas, ferramentas que ninguém sabe explicar. Na prática, o que costuma aparecer depois é isto:</p>
+    <!-- Cena 2. Manifesto: a frase acende palavra por palavra. -->
+    <section class="secao--escura" id="problema" aria-labelledby="titulo-problema" data-tom="escuro">
+      <div class="cena manifesto" data-cena>
+        <div class="cena__palco">
+          <div class="container">
+            <p class="rotulo">O problema</p>
+            <h2 id="titulo-problema" class="manifesto__frase" data-palavras>Muita promessa de IA. <span class="manifesto__acento">Pouca engenharia por trás.</span></h2>
+            <p class="intro manifesto__intro">Escritórios e clínicas passaram a receber ofertas de “IA que resolve tudo”: prompts vendidos como produto, automações montadas às pressas, ferramentas que ninguém sabe explicar. Na prática, o que costuma aparecer depois é isto:</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container problemas">
         <ul class="grade grade--3 lista-problemas">
-          <li class="cartao revelar">
+          <li class="cartao revelar" data-progresso>
+            <span class="problemas__num" aria-hidden="true">01</span>
             <h3>Dados expostos</h3>
             <p>Informações de clientes e pacientes coladas em ferramentas públicas, sem contrato, sem controle de acesso e sem saber onde ficam armazenadas.</p>
           </li>
-          <li class="cartao revelar">
+          <li class="cartao revelar" data-progresso>
+            <span class="problemas__num" aria-hidden="true">02</span>
             <h3>Automações que quebram</h3>
             <p>Fluxos frágeis que param quando um sistema muda de versão. Ninguém percebe até um prazo ou uma consulta se perder.</p>
           </li>
-          <li class="cartao revelar">
+          <li class="cartao revelar" data-progresso>
+            <span class="problemas__num" aria-hidden="true">03</span>
             <h3>Dependência e caixa-preta</h3>
             <p>Soluções presas a uma ferramenta ou a uma pessoa, sem documentação e sem registro do que a IA decidiu e por quê.</p>
           </li>
@@ -291,14 +325,20 @@
       </div>
     </section>
 
-    <!-- 3. Para quem -->
-    <section class="secao" id="para-quem" aria-labelledby="titulo-para-quem">
-      <div class="container">
-        <p class="rotulo">Para quem</p>
-        <h2 id="titulo-para-quem">Conheço a rotina de quem cuida de clientes e pacientes.</h2>
-        <p class="intro">Atendo dois setores que lidam com prazos, volume e informação sigilosa todos os dias. Para cada um, estas são dores comuns e o que dá para fazer com elas.</p>
-        <div class="grade grade--2">
-          <article class="setor revelar" aria-labelledby="titulo-advocacia">
+    <!-- Cena 3. Para quem: título fixo à esquerda, os dois setores passam à direita. -->
+    <section class="secao duo" id="para-quem" aria-labelledby="titulo-para-quem">
+      <div class="container duo__grade">
+        <div class="duo__fixo">
+          <p class="rotulo">Para quem</p>
+          <h2 id="titulo-para-quem">Conheço a rotina de quem cuida de clientes e pacientes.</h2>
+          <p class="intro">Atendo dois setores que lidam com prazos, volume e informação sigilosa todos os dias. Para cada um, estas são dores comuns e o que dá para fazer com elas.</p>
+          <ol class="duo__marcadores" aria-hidden="true">
+            <li data-marca="advocacia">Advocacia</li>
+            <li data-marca="saude">Saúde</li>
+          </ol>
+        </div>
+        <div class="duo__rolagem">
+          <article class="setor revelar" data-setor="advocacia" aria-labelledby="titulo-advocacia">
             <h3 id="titulo-advocacia">Escritórios de advocacia</h3>
             <dl class="dores">
               <div>
@@ -318,7 +358,7 @@
               </div>
             </dl>
           </article>
-          <article class="setor revelar" aria-labelledby="titulo-saude">
+          <article class="setor revelar" data-setor="saude" aria-labelledby="titulo-saude">
             <h3 id="titulo-saude">Clínicas e consultórios médicos</h3>
             <dl class="dores">
               <div>
@@ -342,45 +382,60 @@
       </div>
     </section>
 
-    <!-- 4. Serviços -->
-    <section class="secao secao--alt" id="servicos" aria-labelledby="titulo-servicos">
-      <div class="container">
-        <p class="rotulo">Serviços</p>
-        <h2 id="titulo-servicos">O que a Ocellatus faz</h2>
-        <p class="intro">Seis frentes de trabalho, que podem ser contratadas separadamente ou em conjunto.</p>
-        <ul class="grade grade--3 servicos">
-          <li class="cartao servico revelar" id="diagnostico">
-            <h3>Diagnóstico de processos e análise de causa-raiz</h3>
-            <p>Mapeio como o seu escritório ou a sua clínica funciona hoje e encontro onde está o gargalo de verdade, antes de falar em tecnologia.</p>
-            <p class="exemplo"><span>Exemplo:</span> a clínica acha que precisa de um chatbot, mas o diagnóstico mostra que as faltas vêm de confirmações feitas tarde demais.</p>
-          </li>
-          <li class="cartao servico revelar" id="agentes-de-ia">
-            <h3>Agentes de IA sob medida</h3>
-            <p>Agentes que executam tarefas reais do dia a dia, com limites claros do que podem fazer, registro de cada ação e supervisão humana.</p>
-            <p class="exemplo"><span>Exemplo:</span> um agente lê as publicações do dia, identifica os prazos e prepara a lista para o advogado conferir.</p>
-          </li>
-          <li class="cartao servico revelar" id="automacao">
-            <h3>Melhoria e automação de processos</h3>
-            <p>Otimizo o fluxo de trabalho com ou sem IA. Às vezes a melhor solução é uma regra simples ou uma integração bem feita.</p>
-            <p class="exemplo"><span>Exemplo:</span> acabar com a digitação duplicada entre a agenda da clínica e a planilha de faturamento.</p>
-          </li>
-          <li class="cartao servico revelar" id="integracao">
-            <h3>Integração de sistemas legados com IA</h3>
-            <p>Conecto o sistema que você já usa, como o sistema jurídico, o prontuário eletrônico ou o ERP, a recursos de IA, sem precisar trocar tudo.</p>
-            <p class="exemplo"><span>Exemplo:</span> buscar documentos antigos do escritório em linguagem natural, direto no acervo que já existe.</p>
-          </li>
-          <li class="cartao servico revelar" id="outcome">
-            <h3>Outcome as a Service</h3>
-            <p>Você paga pelo resultado entregue, não por horas trabalhadas nem por licenças. O risco de a solução não funcionar deixa de ser só seu.</p>
-            <p class="exemplo"><span>Exemplo:</span> a clínica paga pelas guias de convênio conferidas antes do envio, e não por um software que talvez ninguém use.</p>
-          </li>
-          <li class="cartao servico revelar" id="transformacao-digital">
-            <h3>Transformação digital</h3>
-            <p>O trabalho que une tudo isso: diagnóstico, automação, IA e integração, planejados em etapas que a sua equipe consegue absorver.</p>
-            <p class="exemplo"><span>Exemplo:</span> um escritório sai de pastas e planilhas para um fluxo digital com prazos, documentos e atendimento conectados.</p>
-          </li>
-        </ul>
+    <!-- Cena 4. Serviços: a rolagem vertical move os cartões na horizontal. -->
+    <section class="secao--alt" id="servicos" aria-labelledby="titulo-servicos">
+      <div class="cena trilho" data-cena>
+        <div class="cena__palco">
+          <div class="container trilho__cabeca">
+            <p class="rotulo">Serviços</p>
+            <h2 id="titulo-servicos">O que a Ocellatus faz</h2>
+            <p class="intro">Seis frentes de trabalho, que podem ser contratadas separadamente ou em conjunto.</p>
+          </div>
+          <div class="trilho__janela">
+            <ul class="trilho__faixa servicos">
+              <li class="cartao servico" id="diagnostico">
+                <span class="servico__num" aria-hidden="true">01</span>
+                <h3>Diagnóstico de processos e análise de causa-raiz</h3>
+                <p>Mapeio como o seu escritório ou a sua clínica funciona hoje e encontro onde está o gargalo de verdade, antes de falar em tecnologia.</p>
+                <p class="exemplo"><span>Exemplo:</span> a clínica acha que precisa de um chatbot, mas o diagnóstico mostra que as faltas vêm de confirmações feitas tarde demais.</p>
+              </li>
+              <li class="cartao servico" id="agentes-de-ia">
+                <span class="servico__num" aria-hidden="true">02</span>
+                <h3>Agentes de IA sob medida</h3>
+                <p>Agentes que executam tarefas reais do dia a dia, com limites claros do que podem fazer, registro de cada ação e supervisão humana.</p>
+                <p class="exemplo"><span>Exemplo:</span> um agente lê as publicações do dia, identifica os prazos e prepara a lista para o advogado conferir.</p>
+              </li>
+              <li class="cartao servico" id="automacao">
+                <span class="servico__num" aria-hidden="true">03</span>
+                <h3>Melhoria e automação de processos</h3>
+                <p>Otimizo o fluxo de trabalho com ou sem IA. Às vezes a melhor solução é uma regra simples ou uma integração bem feita.</p>
+                <p class="exemplo"><span>Exemplo:</span> acabar com a digitação duplicada entre a agenda da clínica e a planilha de faturamento.</p>
+              </li>
+              <li class="cartao servico" id="integracao">
+                <span class="servico__num" aria-hidden="true">04</span>
+                <h3>Integração de sistemas legados com IA</h3>
+                <p>Conecto o sistema que você já usa, como o sistema jurídico, o prontuário eletrônico ou o ERP, a recursos de IA, sem precisar trocar tudo.</p>
+                <p class="exemplo"><span>Exemplo:</span> buscar documentos antigos do escritório em linguagem natural, direto no acervo que já existe.</p>
+              </li>
+              <li class="cartao servico" id="outcome">
+                <span class="servico__num" aria-hidden="true">05</span>
+                <h3>Outcome as a Service</h3>
+                <p>Você paga pelo resultado entregue, não por horas trabalhadas nem por licenças. O risco de a solução não funcionar deixa de ser só seu.</p>
+                <p class="exemplo"><span>Exemplo:</span> a clínica paga pelas guias de convênio conferidas antes do envio, e não por um software que talvez ninguém use.</p>
+              </li>
+              <li class="cartao servico" id="transformacao-digital">
+                <span class="servico__num" aria-hidden="true">06</span>
+                <h3>Transformação digital</h3>
+                <p>O trabalho que une tudo isso: diagnóstico, automação, IA e integração, planejados em etapas que a sua equipe consegue absorver.</p>
+                <p class="exemplo"><span>Exemplo:</span> um escritório sai de pastas e planilhas para um fluxo digital com prazos, documentos e atendimento conectados.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="container trilho__barra" aria-hidden="true"><span></span></div>
+        </div>
+      </div>
 
+      <div class="container trilho__depois">
         <aside class="definicao revelar" id="outcome-as-a-service" aria-labelledby="titulo-oaas">
           <h3 id="titulo-oaas">O que é Outcome as a Service?</h3>
           <p><strong>Outcome as a Service (resultado como serviço) é um modelo de contratação em que o cliente paga pelo resultado entregue, e não pelas horas trabalhadas ou pelas licenças de software.</strong> O resultado é definido e medido junto com o cliente antes do início do projeto.</p>
@@ -390,58 +445,63 @@
       </div>
     </section>
 
-    <!-- 5. Como trabalho -->
-    <section class="secao" id="como-trabalho" aria-labelledby="titulo-como">
-      <div class="container">
-        <p class="rotulo">Como trabalho</p>
-        <h2 id="titulo-como">Quatro etapas, sempre nesta ordem.</h2>
-        <ol class="etapas">
-          <li class="etapa revelar">
-            <h3>Diagnóstico</h3>
-            <p>Entendo o processo atual, converso com quem executa e encontro a causa do problema. Se a IA não for a resposta, digo isso.</p>
-          </li>
-          <li class="etapa revelar">
-            <h3>Proposta com resultado mensurável</h3>
-            <p>Você recebe o resultado esperado, como ele será medido, o que fica fora do escopo e onde os dados vão ficar.</p>
-          </li>
-          <li class="etapa revelar">
-            <h3>Implementação segura</h3>
-            <p>Construo em etapas, com controle de acesso, registro de ações e testes antes de a solução chegar à rotina da equipe.</p>
-          </li>
-          <li class="etapa revelar">
-            <h3>Acompanhamento e auditoria</h3>
-            <p>Depois da entrega, acompanho os resultados e os registros. Tudo o que a IA fez pode ser consultado e revisado.</p>
-          </li>
-        </ol>
+    <!-- Cena 5. Como trabalho: a linha avança e acende cada etapa. -->
+    <section class="cena etapas-cena" id="como-trabalho" data-cena aria-labelledby="titulo-como">
+      <div class="cena__palco">
+        <div class="container">
+          <p class="rotulo">Como trabalho</p>
+          <h2 id="titulo-como">Quatro etapas, sempre nesta ordem.</h2>
+          <div class="etapas-cena__trilha">
+            <span class="etapas-cena__linha" aria-hidden="true"><span></span></span>
+            <ol class="etapas">
+              <li class="etapa">
+                <h3>Diagnóstico</h3>
+                <p>Entendo o processo atual, converso com quem executa e encontro a causa do problema. Se a IA não for a resposta, digo isso.</p>
+              </li>
+              <li class="etapa">
+                <h3>Proposta com resultado mensurável</h3>
+                <p>Você recebe o resultado esperado, como ele será medido, o que fica fora do escopo e onde os dados vão ficar.</p>
+              </li>
+              <li class="etapa">
+                <h3>Implementação segura</h3>
+                <p>Construo em etapas, com controle de acesso, registro de ações e testes antes de a solução chegar à rotina da equipe.</p>
+              </li>
+              <li class="etapa">
+                <h3>Acompanhamento e auditoria</h3>
+                <p>Depois da entrega, acompanho os resultados e os registros. Tudo o que a IA fez pode ser consultado e revisado.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Portfólio -->
+    <!-- Cena 6. Portfólio: cartões em profundidade. -->
     <section class="secao secao--alt" id="portfolio" aria-labelledby="titulo-portfolio">
       <div class="container">
         <p class="rotulo">Portfólio</p>
         <h2 id="titulo-portfolio">Projetos no ar</h2>
         <p class="intro">Alguns sites e plataformas em que a Ocellatus trabalhou.</p>
         <ul class="grade grade--2 portfolio">
-          <li class="cartao projeto revelar">
+          <li class="cartao projeto revelar" data-progresso>
             <p class="projeto__tipo">Advocacia empresarial · Manaus (AM)</p>
             <h3>Assis &amp; Pereira Advogados</h3>
             <p>Site do escritório, com áreas de atuação, perfis dos advogados, perguntas frequentes, formulário de contato e atendimento pelo WhatsApp.</p>
             <p class="projeto__link"><a href="https://www.assisepereira.com.br/" target="_blank" rel="noopener noreferrer">assisepereira.com.br<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
           </li>
-          <li class="cartao projeto revelar">
+          <li class="cartao projeto revelar" data-progresso>
             <p class="projeto__tipo">Marketing e tecnologia para advocacia</p>
             <h3>ADV tá ON Hub Digital</h3>
             <p>Site do hub que cria sites, gerencia campanhas e implanta automações e ferramentas de IA para escritórios, com apresentação das soluções e pedido de proposta.</p>
             <p class="projeto__link"><a href="https://advtaon.com/" target="_blank" rel="noopener noreferrer">advtaon.com<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
           </li>
-          <li class="cartao projeto revelar">
+          <li class="cartao projeto revelar" data-progresso>
             <p class="projeto__tipo">Portal de notícias · Manaus (AM)</p>
             <h3>Portal Cabocla</h3>
             <p>Portal de notícias de Manaus e do Amazonas, com editorias, colunistas, guia de empresas, mídia kit e cadastro na newsletter.</p>
             <p class="projeto__link"><a href="https://portalcabocla.com.br/" target="_blank" rel="noopener noreferrer">portalcabocla.com.br<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
           </li>
-          <li class="cartao projeto revelar">
+          <li class="cartao projeto revelar" data-progresso>
             <p class="projeto__tipo">Plataforma jurídica</p>
             <h3>FarolJuris</h3>
             <p>Plataforma que consulta, monitora e exporta intimações, citações e editais publicados no Diário de Justiça Eletrônico Nacional (DJEN).</p>
@@ -451,13 +511,22 @@
       </div>
     </section>
 
-    <!-- 6. Segurança e conformidade -->
-    <section class="secao secao--escura" id="seguranca" aria-labelledby="titulo-seguranca">
-      <div class="container">
-        <p class="rotulo">Segurança e conformidade</p>
-        <h2 id="titulo-seguranca">Segurança não é um item da lista. É o ponto de partida.</h2>
-        <p class="intro">Advogados e médicos respondem pelo sigilo de quem atendem. Por isso, cada projeto da Ocellatus segue estes princípios desde o desenho.</p>
-        <ul class="grade grade--3 garantias">
+    <!-- Cena 7. Segurança: o anel se fecha em volta do olho enquanto os princípios passam. -->
+    <section class="secao secao--escura duo seguranca" id="seguranca" data-progresso data-tom="escuro" aria-labelledby="titulo-seguranca">
+      <div class="container duo__grade">
+        <div class="duo__fixo">
+          <p class="rotulo">Segurança e conformidade</p>
+          <h2 id="titulo-seguranca">Segurança não é um item da lista. É o ponto de partida.</h2>
+          <p class="intro">Advogados e médicos respondem pelo sigilo de quem atendem. Por isso, cada projeto da Ocellatus segue estes princípios desde o desenho.</p>
+          <div class="seguranca__selo" aria-hidden="true">
+            <svg viewBox="0 0 600 600" focusable="false">
+              <circle class="seguranca__trilha" cx="300" cy="300" r="280" />
+              <circle class="seguranca__anel" cx="300" cy="300" r="280" />
+            </svg>
+            <img src="/assets/img/simbolo-escuro.svg" width="108" height="125" alt="" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <ul class="duo__rolagem garantias">
           <li class="revelar">
             <h3>LGPD desde o desenho</h3>
             <p>Cada projeto começa definindo quais dados são necessários, para qual finalidade e por quanto tempo. O que não é necessário não é coletado.</p>
@@ -484,14 +553,13 @@
             <p>Decisões que afetam clientes ou pacientes passam por uma pessoa. A IA prepara, o profissional decide.</p>
           </li>
         </ul>
-        <!-- Espaço reservado: selos ou certificações só entram aqui se forem reais e verificáveis. -->
       </div>
     </section>
 
-    <!-- 7. Sobre -->
+    <!-- Cena 8. Sobre: a foto se abre a partir de um círculo. -->
     <section class="secao" id="sobre" aria-labelledby="titulo-sobre">
       <div class="container sobre">
-        <figure class="sobre__foto">
+        <figure class="sobre__foto" data-progresso>
           <picture>
             <source srcset="/assets/img/fundador.avif" type="image/avif">
             <img src="/assets/img/fundador.webp" width="400" height="400" alt="Samuelson Brito, fundador da Ocellatus" loading="lazy" decoding="async">
@@ -500,15 +568,15 @@
         <div class="sobre__texto">
           <p class="rotulo">Sobre</p>
           <h2 id="titulo-sobre">Um desenvolvedor, não um vendedor de IA.</h2>
-          <p><strong>A Ocellatus é uma empresa de software de Manaus (AM) especializada em agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.</strong> Foi fundada por Samuelson Brito, desenvolvedor de software.</p>
-          <p>Escrevo software de verdade e uso IA como ferramenta, não como truque. Em eventos do setor, vi muitos empresários pagarem por promessas, prompts e automações frágeis. A Ocellatus existe para ser o contraponto técnico e honesto.</p>
-          <p>Programo desde 2012. Nesses mais de dez anos, desenvolvi sistemas para o setor bancário, portuário e de logística, para marketing digital, para a área jurídica e de recursos humanos, além de integrações com sistemas de ponto. Conheço IA pelo lado da engenharia, não do discurso.</p>
-          <p class="sobre__nome">O nome vem do <i lang="la">Astronotus ocellatus</i>, o peixe Oscar, que junto com a letra O forma o símbolo da marca.</p>
+          <p class="revelar"><strong>A Ocellatus é uma empresa de software de Manaus (AM) especializada em agentes de IA seguros e auditáveis para escritórios de advocacia e clínicas médicas.</strong> Foi fundada por Samuelson Brito, desenvolvedor de software.</p>
+          <p class="revelar">Escrevo software de verdade e uso IA como ferramenta, não como truque. Em eventos do setor, vi muitos empresários pagarem por promessas, prompts e automações frágeis. A Ocellatus existe para ser o contraponto técnico e honesto.</p>
+          <p class="revelar">Programo desde 2012. Nesses mais de dez anos, desenvolvi sistemas para o setor bancário, portuário e de logística, para marketing digital, para a área jurídica e de recursos humanos, além de integrações com sistemas de ponto. Conheço IA pelo lado da engenharia, não do discurso.</p>
+          <p class="sobre__nome revelar">O nome vem do <i lang="la">Astronotus ocellatus</i>, o peixe Oscar, que junto com a letra O forma o símbolo da marca.</p>
         </div>
       </div>
     </section>
 
-    <!-- 8. FAQ -->
+    <!-- FAQ -->
     <section class="secao secao--alt" id="faq" aria-labelledby="titulo-faq">
       <div class="container container--estreito">
         <p class="rotulo">Dúvidas frequentes</p>
@@ -546,19 +614,22 @@
       </div>
     </section>
 
-    <!-- 9. Contato -->
-    <section class="secao contato" id="contato" aria-labelledby="titulo-contato">
-      <div class="container container--estreito">
-        <p class="rotulo">Contato</p>
-        <h2 id="titulo-contato">Vamos conversar sobre o seu escritório ou a sua clínica.</h2>
-        <p class="intro">A primeira conversa serve para entender o seu cenário. Sem compromisso e sem apresentação de vendas.</p>
-        <div class="acoes acoes--centro">
-          <a class="botao botao--primario" href="https://wa.me/5592992394653?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Ocellatus%20e%20gostaria%20de%20conversar%20sobre%20meu%20escrit%C3%B3rio%2Fminha%20cl%C3%ADnica." rel="noopener noreferrer">Conversar pelo WhatsApp</a>
+    <!-- Cena final. Contato: o círculo laranja da marca cresce e vira o fundo do convite. -->
+    <section class="cena final" id="contato" data-cena data-tom="escuro" aria-labelledby="titulo-contato">
+      <div class="cena__palco">
+        <span class="final__disco" aria-hidden="true"></span>
+        <div class="container container--estreito contato">
+          <p class="rotulo">Contato</p>
+          <h2 id="titulo-contato">Vamos conversar sobre o seu escritório ou a sua clínica.</h2>
+          <p class="intro">A primeira conversa serve para entender o seu cenário. Sem compromisso e sem apresentação de vendas.</p>
+          <div class="acoes acoes--centro">
+            <a class="botao botao--primario" href="https://wa.me/5592992394653?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Ocellatus%20e%20gostaria%20de%20conversar%20sobre%20meu%20escrit%C3%B3rio%2Fminha%20cl%C3%ADnica." rel="noopener noreferrer">Conversar pelo WhatsApp</a>
+          </div>
+          <ul class="contato__lista">
+            <li><span>WhatsApp</span> <a href="https://wa.me/5592992394653" rel="noopener noreferrer">+55 92 99239-4653</a></li>
+            <li><span>LinkedIn</span> <a href="https://www.linkedin.com/company/145250750/" rel="noopener noreferrer">Ocellatus no LinkedIn</a></li>
+          </ul>
         </div>
-        <ul class="contato__lista">
-          <li><span>WhatsApp</span> <a href="https://wa.me/5592992394653" rel="noopener noreferrer">+55 92 99239-4653</a></li>
-          <li><span>LinkedIn</span> <a href="https://www.linkedin.com/company/145250750/" rel="noopener noreferrer">Ocellatus no LinkedIn</a></li>
-        </ul>
       </div>
     </section>
   </main>

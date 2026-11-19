@@ -26,8 +26,10 @@ class Conversor(HTMLParser):
             self.dentro_main = True
         if not self.dentro_main:
             return
-        classes = (dict(attrs).get("class") or "").split()
-        if tag in ("script", "style", "svg", "picture", "figure") or {"rotulo", "acoes", "visualmente-oculto"} & set(classes):
+        atributos = dict(attrs)
+        classes = (atributos.get("class") or "").split()
+        decorativo = atributos.get("aria-hidden") == "true"
+        if tag in ("script", "style", "svg", "picture", "figure") or decorativo or {"rotulo", "acoes", "visualmente-oculto"} & set(classes):
             self.pular += 1
             self.fechar_pulo.append(tag)
         if tag in BLOCOS and not self.pular:

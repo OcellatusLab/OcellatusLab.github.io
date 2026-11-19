@@ -13,22 +13,24 @@ llms.txt, llms-full.txt    resumo e conteúdo completo para buscadores de IA
 site.webmanifest, favicon.ico
 .well-known/security.txt   contato para relatos de vulnerabilidade
 assets/css/site.css        estilos e tokens de cor (início do arquivo)
-assets/js/site.js          animação de entrada (o site funciona sem ele)
+assets/css/cinema.css      cenas de rolagem (camada sobre site.css)
+assets/js/cine-init.js     liga as cenas antes da primeira pintura
+assets/js/cinema.js        avanço das cenas (o site funciona sem ele)
 assets/fonts/              Prompt 400/500/600 em woff2 (licença OFL)
 assets/img/                logos e símbolo (SVG), ícones e imagem Open Graph
 .github/workflows/pages.yml  publicação automática
 tools/                     scripts opcionais para regenerar imagens e llms-full.txt
 ```
 
-## Versão scrollytelling (prévia)
+## Animações de rolagem (scrollytelling)
 
-`cinema.html` é a versão cinematográfica do site, com cenas que reagem à rolagem: o símbolo mergulha no olho do peixe, a frase do problema acende palavra por palavra, os serviços correm na horizontal, as etapas se acendem em sequência e o círculo laranja vira o fundo do contato. Ela fica fora dos buscadores (`noindex`) e sem link no site até ser aprovada para substituir o `index.html`.
+A página principal tem cenas que reagem à rolagem: o símbolo mergulha no olho do peixe, a frase do problema acende palavra por palavra, os serviços correm na horizontal, as etapas se acendem em sequência e o círculo laranja vira o fundo do contato.
 
 - `assets/js/cine-init.js` liga o modo cinematográfico antes da primeira pintura, para não haver salto de layout.
 - `assets/js/cinema.js` só calcula o avanço de cada cena (0 a 1) e entrega ao CSS nas variáveis `--p` e `--v`.
-- `assets/css/cinema.css` faz toda a animação, só com `transform`, `opacity`, `color` e `clip-path`.
+- `assets/css/cinema.css` faz toda a animação, só com `transform`, `opacity`, `color` e `clip-path`, por cima de `site.css`.
 
-Sem JavaScript, ou com "reduzir movimento" ligado no sistema, a página aparece inteira na versão estática. As cenas fixas só ligam em telas com pelo menos 640 px de altura. O texto é o mesmo do `index.html`; ao promover a prévia, copie de volta o `<head>` completo (canonical, Open Graph e JSON-LD) e retire o `noindex`.
+Sem JavaScript, ou com "reduzir movimento" ligado no sistema, a página aparece inteira na versão estática. As cenas fixas só ligam em telas com pelo menos 640 px de altura.
 
 ## Rodar localmente
 
